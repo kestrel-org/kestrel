@@ -1,0 +1,38 @@
+{
+  "development": {
+    "username": "username",
+    "password": "password",
+    "database": "templateAngularNode",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": 0,
+    "timezone": "+01:00",
+    "define": {
+      "timestamps": false
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": "",
+    "database": "databaseName",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": 0,
+    "timezone": "+01:00",
+    "define": {
+      "timestamps": false
+    }
+  },
+  "production": {
+    "username": "root",
+    "password": "",
+    "database": "databaseName",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": 0,
+    "timezone": "+01:00",
+    "define": {
+      "timestamps": false
+    }
+  }
+}
