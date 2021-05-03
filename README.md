@@ -47,6 +47,8 @@ $ npm start
 
 Par défault l'accès au backend se fait sur l'url <http://localhost:4000/> et le frontend sur l'url <http://localhost:4200/>
 
+La documentation de l'api / backend se trouve a l'url <http://localhost:4000/api-docs/>
+
 ## Fabriqué avec
 
 * [Visual Studio Code](https://code.visualstudio.com/) - Éditeur de code
@@ -61,7 +63,9 @@ Par défault l'accès au backend se fait sur l'url <http://localhost:4000/> et l
 
 ## Versions
 
-* 1.0 - Initialisation du Projet
+* 1.1 - Exemples
+
+* 1.0 - Initialisation
 
 Voir le fichier [CHANGELOG.md](CHANGELOG.md) pour plus d'informations
 
