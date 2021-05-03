@@ -2,11 +2,11 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/it-works-why.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)
 
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Pour commencer
 
-Ce template a pour but de fournir une base solide dans la réalisation d'un projet avec **Angular** pour le *Frontend* et **Node / Express et Sequelize** pour le backend.
+Ce template a pour but de fournir une base solide dans la réalisation d'un projet avec **Angular** pour le *Frontend* et **Node / Express et Sequelize** pour le *backend*.
 
 Plusieurs utilitaires ont été intégré au template, comme par exemple :
 
@@ -116,6 +116,6 @@ $  npx sequelize-cli seed:generate                     Generates a new seed file
 
 ## Licence
 
-Ce projet est sous licence ``CC BY-NC-SA`` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
+Ce projet est sous licence ``MIT License`` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
 
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
