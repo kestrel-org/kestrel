@@ -36,6 +36,7 @@ Plusieurs utilitaires ont été intégré au template, comme par exemple :
 4. Configurer les accès à la base de données dans ***backend/dbconfig.json***
 5. Pour la génération automatique des modèles il faut aussi modifié la commande dans ***backend/package.json***
 6. Vous pouvez regarder et modifier les différentes variables d'environnement situé dans ***backend/.env***
+7. Vous pouvez maintenant lancer le script se situant dans ***utils/innitDB.sh*** pour initialiser la base de données d'exemple
 
 ## Démarrage
 
@@ -54,7 +55,7 @@ La documentation de l'api / backend se trouve a l'url <http://localhost:4000/api
 * [Visual Studio Code](https://code.visualstudio.com/) - Éditeur de code
 * [Angular v11](https://angular.io/) - Framework Javascript pour le Frontend
 * [Angular - Datatables](http://l-lin.github.io/angular-datatables/#/welcome) - Librairie proposant des fonctions avancés pour les tableaux html (filtre, recherche, pagination, ...)
-* [ngx-sweetalert2](https://www.npmjs.com/package/@sweetalert2/ngx-sweetalert2) - Librairie pour la génération de modal simples et dynamiques
+* [Ngx-sweetalert2](https://www.npmjs.com/package/@sweetalert2/ngx-sweetalert2) - Librairie pour la génération de modal simples et dynamiques
 * [Compodoc](https://compodoc.app/) - Outil de documentation pour Angular
 * [NodeJS](https://nodejs.org/en/) - Javascript orienté Serveur
 * [Express](https://expressjs.com/fr/) - Framework NodeJS pour la construction d'Api
