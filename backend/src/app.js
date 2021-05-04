@@ -1,16 +1,15 @@
 /**
  * Module dependencies.
  */
- const express = require('express');
- const session = require('express-session');
- const bodyParser = require('body-parser');
- const logger = require('morgan');
- const helmet = require('helmet');
- const path = require("path");
- const fs = require("fs");
- const cors = require('cors');
- const request = require('request');
- require('dotenv').config();
+const express = require('express');
+const session = require('express-session');
+const logger = require('morgan');
+const helmet = require('helmet');
+const path = require("path");
+const fs = require("fs");
+const cors = require('cors');
+const request = require('request');
+require('dotenv').config();
 
 const exempleRouter = require('./routes/exemple');
 
@@ -102,34 +101,33 @@ expressSwagger(options)
 // }
 
 app.use(session({
-  secret: 'YJ3qw$XCTpRb',
+  secret: 'HvD56y!cgQnM',
   resave: false,
   saveUninitialized: false,
   cookie: {
-      maxAge: 86400000,
-      httpOnly: false,
-      secure: false // true only for https
+    maxAge: 86400000,
+    httpOnly: false,
+    secure: false // true only for https
   }
 }));
 
 // Cors
 
 /**
- * * Uncomment if you want to use CORS
+ * * Comment if you don't want to use CORS
  */
-// const whitelist = ['http://localhost:4200']
-// const corsOptions = {
-//     credentials: true,
-//     origin: function (origin, callback) {
-//         if (whitelist.indexOf(origin) !== -1) {
-//             callback(null, true)
-//         } else {
-//             callback(new Error('Not allowed by CORS'))
-//         }
-//     }
-// }
-
-// app.use(cors(corsOptions));
+const whitelist = ['http://localhost:4200'];
+const corsOptions = {
+  credentials: true,
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+app.use(cors(corsOptions));
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, '../access.log'), {
   flags: 'a'
@@ -142,7 +140,6 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: false
 }));
-app.use(bodyParser.json());
 app.use(helmet());
 
 

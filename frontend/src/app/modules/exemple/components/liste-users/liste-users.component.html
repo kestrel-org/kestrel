@@ -1,0 +1,62 @@
+<h1>Template Angular - Node / Express / Sequelize</h1>
+<h2>Exemple de gestion d'utilisateur</h2>
+
+<button (click)="toggleIsAddingUser()">Ajouter un utilisateur</button>
+
+<div [appLoader]="isLoadingUsers">
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom d'utilisateur</th>
+        <th>Mot de passe</th>
+        <th>Adresse mail</th>
+        <th>Créer le</th>
+        <th>Modifié le</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.login }}</td>
+        <td>{{ user.password }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.createdAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}</td>
+        <td>{{ user.updatedAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}</td>
+        <td>
+          <button (click)="getDetails(user.id)">Voir les détails</button>
+          <button
+            [swal]="{ title: 'Supprimer l\'utilisateur ?', text: 'Cette action est irréversible', icon: 'question', showCancelButton: true, cancelButtonText: 'Annuler' }"
+            (confirm)="deleteUser(user.id)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="isAddingUser">
+  <h3>Ajouter un utilisateur</h3>
+  <span><strong>Nom d'utilisateur:</strong></span><input type="text" [(ngModel)]=" newUser.login" /> <br />
+  <span><strong>Mot de passe:</strong></span><input type="text" [(ngModel)]=" newUser.password" /> <br />
+  <span><strong>Adresse mail:</strong></span><input size="50" type="text" [(ngModel)]=" newUser.email" /> <br />
+  <button (click)="addUser()">Ajouter</button>
+</div>
+
+<div *ngIf="userDetails">
+  <h3>Utilisateur N°{{ userDetails.id }} - {{ userDetails.login }}</h3>
+  <span><strong>Nom d'utilisateur:</strong></span><input type="text" [(ngModel)]=" userDetails.login" /> <br />
+  <span><strong>Mot de passe:</strong></span><input type="text" [(ngModel)]=" userDetails.password" /> <br />
+  <span><strong>Adresse mail:</strong></span><input size="50" type="text" [(ngModel)]=" userDetails.email" /> <br />
+  <span><strong>Créer le:</strong> {{ userDetails.createdAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }} </span> <br />
+  <span><strong>Modifié le:</strong> {{ userDetails.updatedAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }} </span> <br />
+  <button (click)="saveUser()">Sauvegarder</button>
+</div>
+
+<!-- Success Modal -->
+<swal #successSwal icon="success" timer="1000" timerProgressBar="true" [showConfirmButton]="false">
+</swal>
+
+<!-- Error Modal -->
+<swal #errorSwal title="Erreur !" text="Veuillez renseigner tout les champs." icon="error">
+</swal>

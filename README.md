@@ -49,10 +49,12 @@ Par défault l'accès au backend se fait sur l'url <http://localhost:4000/> et l
 
 La documentation de l'api / backend se trouve a l'url <http://localhost:4000/api-docs/>
 
-## Fabriqué avec
+## Développé avec
 
 * [Visual Studio Code](https://code.visualstudio.com/) - Éditeur de code
 * [Angular v11](https://angular.io/) - Framework Javascript pour le Frontend
+* [Angular - Datatables](http://l-lin.github.io/angular-datatables/#/welcome) - Librairie proposant des fonctions avancés pour les tableaux html (filtre, recherche, pagination, ...)
+* [ngx-sweetalert2](https://www.npmjs.com/package/@sweetalert2/ngx-sweetalert2) - Librairie pour la génération de modal simples et dynamiques
 * [Compodoc](https://compodoc.app/) - Outil de documentation pour Angular
 * [NodeJS](https://nodejs.org/en/) - Javascript orienté Serveur
 * [Express](https://expressjs.com/fr/) - Framework NodeJS pour la construction d'Api

@@ -1,4 +1,5 @@
 import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
+import { v4 as uuidv4 } from 'uuid';
 
 @Directive({
   selector: '[appLoader]'
@@ -9,29 +10,33 @@ export class LoaderDirective implements OnChanges {
 
   el: ElementRef;
   baseDisplay: string;
-  isInit = true;
+  loaderActive = false;
+
+  uuid = uuidv4();
 
   constructor(el: ElementRef) {
     this.el = el;
   }
 
-  loadLoader() {
+  toggleLoader() {
     if (this.appLoader) {
       this.el.nativeElement.style.display = 'none';
       const img = document.createElement('img');
+      img.id = 'preloader_' + this.uuid;
       img.src = this.loaderSource;
       this.el.nativeElement.parentNode.append(img);
-      this.isInit = false;
-    } else if (!this.isInit) {
+      this.loaderActive = true;
+    } else if (this.loaderActive) {
       this.el.nativeElement.style.display = this.baseDisplay;
-      this.el.nativeElement.parentNode.removeChild(this.el.nativeElement.parentNode.lastElementChild);
+      const img = document.getElementById('preloader_' + this.uuid);
+      img.remove();
     }
   }
 
   ngOnChanges() {
-    if (this.isInit) {
+    if (!this.loaderActive) {
       this.baseDisplay = this.el.nativeElement.style.display;
     }
-    this.loadLoader();
+    this.toggleLoader();
   }
 }
