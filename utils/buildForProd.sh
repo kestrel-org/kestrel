@@ -18,7 +18,11 @@ else
     echo -e "\n ${msg}dépendances du backend déjà installées${neutre} \n"
 fi
 echo -e "\n${msg}build du backend ...${neutre}"
-cp -r . ../dist
+shopt -s extglob
+mkdir ../dist
+cp -r ./!(node_modules) ../dist
+cd ../dist
+npm i
 sed -i "/catch 404/i\// Angular\napp.use(express.static(path.join(__dirname, \"public\")));\napp.get('**', function (req, res) {\n  res.sendFile(__dirname + '/public/index.html');\n});\n" ../dist/src/app.js
 
 # Build du frontend

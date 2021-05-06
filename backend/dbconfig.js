@@ -1,8 +1,9 @@
-{
-  "development": {
-    "username": "username",
-    "password": "password",
-    "database": "templateAngularNode",
+require('dotenv').config();
+module.exports = {
+  "dev": {
+    "username": process.env.DB_USERNAME_DEV,
+    "password": process.env.DB_PASSWORD_DEV,
+    "database": process.env.DB_SCHEMA_DEV,
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": 0,
@@ -12,9 +13,9 @@
     }
   },
   "test": {
-    "username": "username",
-    "password": "password",
-    "database": "templateAngularNode",
+    "username": process.env.DB_USERNAME_TEST,
+    "password": process.env.DB_PASSWORD_TEST,
+    "database": process.env.DB_SCHEMA_TEST,
     "host": "127.0.0.1",
     "dialect": "mysql",
     "logging": false,
@@ -24,10 +25,10 @@
       "timestamps": false
     }
   },
-  "production": {
-    "username": "root",
-    "password": "",
-    "database": "databaseName",
+  "prod": {
+    "username": process.env.DB_USERNAME_PROD,
+    "password": process.env.DB_PASSWORD_PROD,
+    "database": process.env.DB_SCHEMA_PROD,
     "host": "127.0.0.1",
     "dialect": "mysql",
     "logging": false,
@@ -37,4 +38,4 @@
       "timestamps": false
     }
   }
-}
+};
