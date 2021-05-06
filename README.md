@@ -36,7 +36,7 @@ Plusieurs utilitaires ont été intégré au template, comme par exemple :
 4. Configurer les accès à la base de données dans ***backend/dbconfig.json***
 5. Pour la génération automatique des modèles il faut aussi modifié la commande dans ***backend/package.json***
 6. Vous pouvez regarder et modifier les différentes variables d'environnement situé dans ***backend/.env***
-7. Vous pouvez maintenant lancer le script se situant dans ***utils/innitDB.sh*** pour initialiser la base de données d'exemple
+7. Vous pouvez maintenant lancer le script se situant dans ***utils/initDB.sh*** pour initialiser la base de données d'exemple
 
 ## Démarrage
 
