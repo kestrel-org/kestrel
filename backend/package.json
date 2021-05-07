@@ -6,7 +6,7 @@
     "start": "nodemon --exec npm run babel-node --  ./src/server.js",
     "babel-node": "babel-node",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
-    "generate-models": "sequelize-auto -o \"./src/models\" -d templateAngularNode -h localhost -u username -p 3306 -x password -e mysql --skipTables sequelizemeta"
+    "generate-models": "bash -c 'sequelize-auto -o \"./src/models\" -d $0 -h localhost -u $1 -p 3306 -x $2 -e mysql --skipTables sequelizemeta'"
   },
   "nodemonConfig": {
     "ignore": [

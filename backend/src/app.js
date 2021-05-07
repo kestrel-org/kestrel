@@ -4,6 +4,7 @@
  const express = require('express');
  const helmet = require('helmet');
  const exempleRouter = require('./routes/exemple');
+ const path = require("path");
  require('dotenv').config();
  
  const app = express();
@@ -44,7 +45,7 @@
  app.use(function (err, req, res, next) {
    // set locals, only providing error in development
    res.locals.message = err.message;
-   res.locals.error = req.app.get('env') === 'development' ? err : {};
+   res.locals.error = req.app.get('env') === 'dev' ? err : {};
  
    res.status(err.status || 500);
    res.send(res.locals.message);
