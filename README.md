@@ -49,6 +49,10 @@ Par défault l'accès au backend se fait sur l'url <http://localhost:4000/> et l
 
 La documentation de l'api / backend se trouve a l'url <http://localhost:4000/api-docs/>
 
+## Configuration
+
+Vous pouvez configurer les différents modules que vous voulez utiliser dans le *backend* avec dans le fichier ***app.js***, la variable **back_config**
+
 ## Développé avec
 
 * [Visual Studio Code](https://code.visualstudio.com/) - Éditeur de code
@@ -65,9 +69,11 @@ La documentation de l'api / backend se trouve a l'url <http://localhost:4000/api
 
 ## Versions
 
-* 1.1 - Exemples
+* 1.2 - Réécriture du backend - NONE
 
-* 1.0 - Initialisation
+* 1.1 - Exemples - 04/05/2021
+
+* 1.0 - Initialisation - 27/04/2021
 
 Voir le fichier [CHANGELOG.md](CHANGELOG.md) pour plus d'informations
 
@@ -119,6 +125,7 @@ $  npx sequelize-cli seed:generate                     Generates a new seed file
 ## Auteur(s)
 
 * **Florent SIMONET** _alias_ [@SFlorent](https://github.com/SFlorent)
+* **Sébastien FOUCHEUR** _alias_ [@Sfoucheur](https://github.com/Sfoucheur)
 
 ## Licence
 

@@ -1,6 +1,6 @@
 const cors = require('cors');
 const config = {
-    whitelist: ['http://localhost:4200']
+    whitelist: ['http://localhost:4200', 'http://localhost:4000']
 }
 module.exports = (app) => {
     const corsOptions = {

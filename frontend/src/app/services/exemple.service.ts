@@ -1,9 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "../../environments/environment";
-
-import { lastValueFrom } from "rxjs";
-
 @Injectable({
   providedIn: "root",
 })
@@ -16,28 +13,28 @@ export class ExempleService {
   httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "http://localhost:4200",
+      "Access-Control-Allow-Origin": environment.ORIGIN_URL,
     }),
     withCredentials: true,
   };
 
   getUsers(): Promise<any> {
-    return lastValueFrom(this.http.get(this.BASEURL + "exemple/users", this.httpOptions));
+    return this.http.get(this.BASEURL + "exemple/users", this.httpOptions).toPromise();
   }
 
   getUsersById(id: number): Promise<any> {
-    return lastValueFrom(this.http.get(this.BASEURL + "exemple/users/" + id, this.httpOptions));
+    return this.http.get(this.BASEURL + "exemple/users/" + id, this.httpOptions).toPromise();
   }
 
   deleteUsersById(id: number): Promise<any> {
-    return lastValueFrom(this.http.delete(this.BASEURL + "exemple/users?id=" + id, this.httpOptions));
+    return this.http.delete(this.BASEURL + "exemple/users?id=" + id, this.httpOptions).toPromise();
   }
 
   postUsers(login: string, password: string, email: string): Promise<any> {
-    return lastValueFrom(this.http.post(this.BASEURL + "exemple/users", {login, password, email}, this.httpOptions));
+    return this.http.post(this.BASEURL + "exemple/users", {login, password, email}, this.httpOptions).toPromise();
   }
 
   putUsers(id: number, login: string, password: string, email: string): Promise<any> {
-    return lastValueFrom(this.http.put(this.BASEURL + "exemple/users", {id, login, password, email}, this.httpOptions));
+    return this.http.put(this.BASEURL + "exemple/users", {id, login, password, email}, this.httpOptions).toPromise();
   }
 }

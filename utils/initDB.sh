@@ -11,7 +11,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 envVARS=("DB_SCHEMA_$ENV" "DB_USERNAME_$ENV" "DB_PASSWORD_$ENV")
 for i in "${envVARS[@]}"
 do
-    tmp=$(grep $i= ./backend/.env | cut -f2- -d=)
+    tmp=$(grep $i= $SCRIPT_DIR/../backend/.env | cut -f2- -d=)
     if [ ${#tmp} -lt 1 ] ; then
         echo -e "${error}La variable d'environnement '$i' n'a pas été spécifié correctement.${neutre}"
         read -p "Appuyer sur n'importe quelle touche pour continuer ..."
