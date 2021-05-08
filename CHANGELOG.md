@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.2 - Réécriture du backend - `08/05/2021`
+## v1.2.0 - Réécriture du backend - `08/05/2021`
 
 * Ajout d'un script pour générer des routeurs automatiquement
 * Ajout du fichier routes.js pour centraliser les routes
@@ -9,7 +9,7 @@
 * Fix du script buildForProd.sh
 * Mise à jour des dépendances
 
-## v1.1 - Exemples - `04/05/2021`
+## v1.1.0 - Exemples - `04/05/2021`
 
 * Réécriture de la "Loader Directive"
 * Ajout de [ngx-sweetalert2](https://www.npmjs.com/package/@sweetalert2/ngx-sweetalert2)
@@ -18,6 +18,6 @@
 * Ajout d'exemples pour le backend et le frontend
 * Mise à jour des dépendances
 
-## v1.0 - Initialisation - `27/04/2021`
+## v1.0.0 - Initialisation - `27/04/2021`
 
 * Initialisation du projet
