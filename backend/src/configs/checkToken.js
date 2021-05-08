@@ -1,9 +1,9 @@
-const exempleRouter = require('../routes/exemple');
+const routes = require('../routes/routes');
 const config = {
     
 }
 module.exports = (app) => {
-    const jwtCheck = async (req, res, next) => {
+    const checkToken = async (req, res, next) => {
         if (req.method == 'OPTIONS') {
             next();
         } else {
@@ -50,5 +50,10 @@ module.exports = (app) => {
             );
         }
     }
-    app.use(process.env.API_BASE_PATH + '/exemple', jwtCheck, exempleRouter);
+    for(let route of routes){
+        if(route.checkToken){
+            app.use(process.env.API_BASE_PATH + "/" + route.path, checkToken, require(`../routes/${route.router}`));
+        }
+    }
+   
 }
