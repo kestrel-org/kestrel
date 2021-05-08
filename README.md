@@ -79,11 +79,11 @@ La configuration des routes se trouve dans le fichier ***routes.js***
 
 ## Versions
 
-* 1.2 - Réécriture du backend - `08/05/2021`
+* 1.2.0 - Réécriture du backend - `08/05/2021`
 
-* 1.1 - Exemples - `04/05/2021`
+* 1.1.0 - Exemples - `04/05/2021`
 
-* 1.0 - Initialisation - `27/04/2021`
+* 1.0.0 - Initialisation - `27/04/2021`
 
 Voir le fichier [CHANGELOG.md](CHANGELOG.md) pour plus d'informations
 
