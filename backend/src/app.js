@@ -3,14 +3,14 @@
  */
  const express = require('express');
  const helmet = require('helmet');
- const exempleRouter = require('./routes/exemple');
+ const routes = require('./routes/routes');
  const path = require("path");
  require('dotenv').config();
  
  const app = express();
  
  const back_config = {
-   jwt: false,
+   checkToken: false,
    swagger: true,
    cors: true,
    logger: true,
@@ -30,16 +30,20 @@
  app.use(helmet());
  
  
- if (!back_config.jwt)
-   app.use(process.env.API_BASE_PATH + '/exemple', exempleRouter);
+for(let route of routes){
+  if(!route.checkToken){
+      app.use(process.env.API_BASE_PATH + "/" + route.path, require(`./routes/${route.router}`));
+  }
+}
+
  
  // catch 404 and forward to error handler
- app.use(function (req, res, next) {
-   res.status(404).send({
-     code: 404,
-     error: 'route not found'
-   })
- });
+app.use(function (req, res, next) {
+  res.status(404).send({
+    code: 404,
+    error: 'route not found'
+  })
+});
  
  // error handler
  app.use(function (err, req, res, next) {

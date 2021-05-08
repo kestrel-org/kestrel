@@ -6,7 +6,8 @@
     "start": "nodemon --exec npm run babel-node --  ./src/server.js",
     "babel-node": "babel-node",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
-    "generate-models": "bash -c 'sequelize-auto -o \"./src/models\" -d $0 -h localhost -u $1 -p 3306 -x $2 -e mysql --skipTables sequelizemeta'"
+    "generate-models": "bash -c 'sequelize-auto -o \"./src/models\" -d $0 -h localhost -u $1 -p 3306 -x $2 -e mysql --skipTables sequelizemeta --noInitModels'",
+    "addRoute": "node ./cli/addRoute.js"
   },
   "nodemonConfig": {
     "ignore": [
@@ -31,6 +32,7 @@
     "@babel/core": "^7.14.0",
     "@babel/node": "^7.13.13",
     "@babel/preset-env": "^7.14.1",
+    "chalk": "^2.4.2",
     "cors": "^2.8.5",
     "debug": "^4.3.1",
     "dotenv": "^9.0.0",
@@ -43,6 +45,7 @@
     "morgan": "^1.10.0",
     "mysql2": "^2.2.5",
     "pdfkit": "^0.12.1",
+    "prompts": "^2.4.1",
     "sequelize": "^6.6.2",
     "sequelize-auto": "^0.8.2"
   },
