@@ -2,12 +2,17 @@
 
 const args = process.argv.slice(2);
 const chalk = require('chalk');
+
+// Check if there is one and only one argument passed to the script
 if (args.length != 1) {
     console.error(chalk.red.bold("Veuillez specifier un seul argument !"));
     return;
 }
 const router_name = args[0];
 const pattern = /[^-_a-zA-Z]/g
+
+// Check if argument length is 2 or more and if it contains only letters and '-' and '_'
+
 if (router_name.match(pattern) || router_name.length < 2) {
     console.error(chalk.red.bold("La nom doit contenir au moins 2 caractère\nLes caractères autorisés sont : \n· A-Z \n· - \n· _"));
     return;
@@ -20,6 +25,9 @@ const path_mod = require('path');
 const util = require('util');
 const env = process.env.NODE_ENV || 'dev';
 const config = require(__dirname + '/../dbconfig.js')[env];
+
+// Get sequelize with config to get all models
+
 let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
@@ -34,6 +42,8 @@ const routes_path = `${__dirname}/../src/routes/routes.js`;
 const ignored_files = ["index.js","init-models.js"];
 const models = [{title:"Aucun",value:false}]
 
+// Get all models to prompt the user with them
+
 fs.readdirSync(`${__dirname}/../src/models`)
   .filter(file => {
     return (file.indexOf('.') !== 0) && (!ignored_files.includes(file)) && (file.slice(-3) === '.js');
@@ -47,6 +57,9 @@ fs.readdirSync(`${__dirname}/../src/models`)
   });
 
 (async () => {
+
+    // Check if router already exist
+
     let overwrite = true;
     let exist = false;
     if (fs.existsSync(router_file_path)) {
@@ -62,6 +75,7 @@ fs.readdirSync(`${__dirname}/../src/models`)
         overwrite=ow.value;
     }
     if(overwrite){
+        // Prompt user with different paramters to build the router
         const checkToken = await prompts({
             type: 'toggle',
             name: 'value',
@@ -83,6 +97,9 @@ fs.readdirSync(`${__dirname}/../src/models`)
             choices: models,
             initial: 0
         });
+
+        // Create an empty router file
+
         fs.writeFile(router_file_path, "",function (err) {
             if (err) {
                 return console.log(err);
@@ -92,11 +109,17 @@ fs.readdirSync(`${__dirname}/../src/models`)
             if(model.value){
                 data = router_crud_data;
             }
+
+            //  Read the right template file if the user has selected a model or not
+
             fs.readFile(data, 'utf8', function (err,data) {
                 if (err) {
                   return console.log(err);
                 }
                 result = data;
+
+                // Build the crud template if a model is selected
+
                 if(model.value){
                     const model_obj = require(path_mod.join(__dirname+"/../src/models", `${model.value}.js`))(sequelize, Sequelize.DataTypes);
                     let attrs = model_obj['tableAttributes'];
@@ -121,10 +144,16 @@ fs.readdirSync(`${__dirname}/../src/models`)
                     result = result.replaceAll("{{path}}", path.value);
                     
                 }
+
+                // Save the template to the router file
+
                 fs.writeFile(router_file_path, result, (err) => {
                     if (err) {
                         return console.log(err);
                     }
+
+                    // Check if router exist
+
                     if(exist){
                         let found = false;
                         for(let i = 0;i<routes.length;i++){
@@ -151,6 +180,9 @@ fs.readdirSync(`${__dirname}/../src/models`)
                             router: router_name
                         })
                     }
+
+                    // Write the config of the router to routes.js file
+
                     fs.writeFile(routes_path,"module.exports = "+util.inspect(routes) ,function (err) {
                         if (err) {
                             return console.log(err);

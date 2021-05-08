@@ -2,7 +2,9 @@
 
 ## v1.2 - Réécriture du backend - `NONE`
 
-* Ajout d'un dossier config
+* Ajout d'un script pour générer des routeurs automatiquement
+* Ajout du fichier routes.js pour centraliser les routes
+* Ajout d'un dossier configs
 * Centralisation de la configuration dans le .env
 * Fix du script buildForProd.sh
 * Mise à jour des dépendances
