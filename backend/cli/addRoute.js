@@ -69,8 +69,8 @@ fs.readdirSync(`${__dirname}/../src/models`)
             name: 'value',
             message: 'Already exist, Overwrite ?',
             initial: false,
-            active: 'oui',
-            inactive: 'non'
+            active: 'yes',
+            inactive: 'no'
         });
         overwrite=ow.value;
     }
@@ -136,12 +136,12 @@ fs.readdirSync(`${__dirname}/../src/models`)
                     }
                     let model_def = model.value.charAt(model.value.length-1) == "s" ? model.value.slice(0, -1) : model.value;
                     model_def = model_def.charAt(0).toUpperCase() + model_def.slice(1);
-                    result = data.replaceAll("{{model}}", model.value);
-                    result = result.replaceAll("{{model_def}}", model_def);
-                    result = result.replaceAll("{{model_single}}", model.value.charAt(model.value.length-1) == "s" ? model.value.slice(0, -1) : model.value);
-                    result = result.replaceAll("{{model_id}}", model_obj['primaryKeyAttribute']);
-                    result = result.replaceAll("{{model_properties}}", properties.join('\n '));
-                    result = result.replaceAll("{{path}}", path.value);
+                    result = data.replace(/{{model}}/g, model.value);
+                    result = result.replace(/{{model_def}}/g, model_def);
+                    result = result.replace(/{{model_single}}/g, model.value.charAt(model.value.length-1) == "s" ? model.value.slice(0, -1) : model.value);
+                    result = result.replace(/{{model_id}}/g, model_obj['primaryKeyAttribute']);
+                    result = result.replace(/{{model_properties}}/g, properties.join('\n '));
+                    result = result.replace(/{{path}}/g, path.value);
                     
                 }
 

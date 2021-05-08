@@ -49,9 +49,19 @@ Par défault l'accès au backend se fait sur l'url <http://localhost:4000/> et l
 
 La documentation de l'api / backend se trouve a l'url <http://localhost:4000/api-docs/>
 
+## Ajouter une route dans le backend
+
+Vous pouvez utiliser la commande `npm run addRoute <ROUTE>` en étant situé dans le dossier *backend*
+
 ## Configuration
 
+### Général
+
 Vous pouvez configurer les différents modules que vous voulez utiliser dans le *backend* avec dans le fichier ***app.js***, la variable **back_config**
+
+### Routes
+
+La configuration des routes se trouve dans le fichier ***routes.js***
 
 ## Développé avec
 
@@ -69,7 +79,7 @@ Vous pouvez configurer les différents modules que vous voulez utiliser dans le 
 
 ## Versions
 
-* 1.2 - Réécriture du backend - `NONE`
+* 1.2 - Réécriture du backend - `08/05/2021`
 
 * 1.1 - Exemples - `04/05/2021`
 

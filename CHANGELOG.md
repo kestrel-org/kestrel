@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.2 - Réécriture du backend - `NONE`
+## v1.2 - Réécriture du backend - `08/05/2021`
 
 * Ajout d'un script pour générer des routeurs automatiquement
 * Ajout du fichier routes.js pour centraliser les routes
