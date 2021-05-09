@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.0 - Support pour les routes avec dossiers - `NONE`
+
+* Support pour les routes avec dossiers
+
 ## v1.2.0 - Réécriture du backend - `08/05/2021`
 
 * Ajout d'un script pour générer des routeurs automatiquement

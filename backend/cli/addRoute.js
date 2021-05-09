@@ -16,7 +16,7 @@ const is_file_path = pattern.test(router_name);
 // Check if argument length is 2 or more and if it contains only letters and '-' and '_'
 
 if (!is_file_path || router_name.length < 2) {
-    console.error(chalk.red.bold("La nom doit contenir au moins 2 caractère\nLes caractères autorisés sont : \n· A-Z \n· - \n· _"));
+    console.error(chalk.red.bold("La nom doit contenir au moins 2 caractère\nLes caractères autorisés sont : \n· A-Z \n· - \n· _\n· /"));
     return;
 }
 const routes = require('../src/routes/routes');
