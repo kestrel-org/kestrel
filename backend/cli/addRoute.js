@@ -4,16 +4,18 @@ const args = process.argv.slice(2);
 const chalk = require('chalk');
 
 // Check if there is one and only one argument passed to the script
+
 if (args.length != 1) {
     console.error(chalk.red.bold("Veuillez specifier un seul argument !"));
     return;
 }
 const router_name = args[0];
-const pattern = /[^-_a-zA-Z]/g
+const pattern = /^([-_A-z]+\/)*[-_A-z]+$/g
+const is_file_path = pattern.test(router_name);
 
 // Check if argument length is 2 or more and if it contains only letters and '-' and '_'
 
-if (router_name.match(pattern) || router_name.length < 2) {
+if (!is_file_path || router_name.length < 2) {
     console.error(chalk.red.bold("La nom doit contenir au moins 2 caractère\nLes caractères autorisés sont : \n· A-Z \n· - \n· _"));
     return;
 }
@@ -74,8 +76,11 @@ fs.readdirSync(`${__dirname}/../src/models`)
         });
         overwrite=ow.value;
     }
+    
     if(overwrite){
+
         // Prompt user with different paramters to build the router
+
         const checkToken = await prompts({
             type: 'toggle',
             name: 'value',
@@ -87,7 +92,7 @@ fs.readdirSync(`${__dirname}/../src/models`)
         const path = await prompts({
             type: 'text',
             name: 'value',
-            initial: router_name,
+            initial: router_name.split('/').pop(),
             message: `Path ?`
         });
         const model = await prompts({
@@ -97,6 +102,27 @@ fs.readdirSync(`${__dirname}/../src/models`)
             choices: models,
             initial: 0
         });
+
+        // Build folder path if it does not exist
+
+        const router_path = router_name.split('/');
+        let path_to_model = "../models";
+        if(router_path.length>1){
+            path_to_model = "../".repeat(router_path.length-1)+path_to_model;
+            if(!exist){
+                let folders = router_path[0];
+                for(let i = 1; i<router_path.length;i++){
+                    if (!fs.existsSync(`${__dirname}/../src/routes/${folders}`)){
+                        fs.mkdirSync(`${__dirname}/../src/routes/${folders}`, function(err) {
+                            if (err) {
+                                return console.log(err);
+                            }
+                        });
+                    }
+                    folders+=`/${router_path[i]}`
+                }
+            }
+        }
 
         // Create an empty router file
 
@@ -117,6 +143,8 @@ fs.readdirSync(`${__dirname}/../src/models`)
                   return console.log(err);
                 }
                 result = data;
+                result = result.replace(/{{path_to_model}}/g, path_to_model);
+                result = result.replace(/{{path}}/g, path.value);
 
                 // Build the crud template if a model is selected
 
@@ -136,12 +164,11 @@ fs.readdirSync(`${__dirname}/../src/models`)
                     }
                     let model_def = model.value.charAt(model.value.length-1) == "s" ? model.value.slice(0, -1) : model.value;
                     model_def = model_def.charAt(0).toUpperCase() + model_def.slice(1);
-                    result = data.replace(/{{model}}/g, model.value);
+                    result = result.replace(/{{model}}/g, model.value);
                     result = result.replace(/{{model_def}}/g, model_def);
                     result = result.replace(/{{model_single}}/g, model.value.charAt(model.value.length-1) == "s" ? model.value.slice(0, -1) : model.value);
                     result = result.replace(/{{model_id}}/g, model_obj['primaryKeyAttribute']);
                     result = result.replace(/{{model_properties}}/g, properties.join('\n '));
-                    result = result.replace(/{{path}}/g, path.value);
                     
                 }
 
