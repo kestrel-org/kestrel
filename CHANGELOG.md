@@ -1,7 +1,9 @@
 # Changelog
 
-## v1.3.0 - Support pour les routes avec dossiers - `NONE`
+## v1.3.0 - Améliorations diverse du backend - `17/05/2021`
 
+* Renommage du dossier assets en templates
+* Demande de saisie de nom si pas fourni dans la commande addRoute
 * Support pour les routes avec dossiers
 
 ## v1.2.0 - Réécriture du backend - `08/05/2021`
