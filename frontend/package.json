@@ -23,7 +23,7 @@
     "@angular/platform-browser-dynamic": "^11.2.14",
     "@angular/router": "^11.2.14",
     "@sweetalert2/ngx-sweetalert2": "^9.0.0",
-    "angular-datatables": "^11.1.2",
+    "angular-datatables": "^11.2.0",
     "datatables.net": "^1.10.24",
     "datatables.net-dt": "^1.10.24",
     "jquery": "^3.6.0",
