@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.4.0 - Mise à jour automatique des dépendances + largeur/hauteur sur la "Loader Directive" - `17/05/2021`
+
+* Ajout de [Depfu](https://depfu.com/) pour la création de PRs automatiques liées aux mises à jour des dépendances
+* Ajout de [Mergify](https://mergify.io/) pour merge automatiquement des PRs sur la branche principale
+* Ajout d'un fichier de règles: ".mergify.yml" (merge uniquement les PRs de Depfu qui sont des mises à jour "PATCH")
+* Mise à jour des dépendances
+* Ajout de la possibilité de donner une hauteur et une largeur lors de l'utilisation de la "Loader Directive"
+* Ajout du flag "--noInitModels" sur la commande "generate-models"
+* Suppression du fichier "init-models.js"
+
 ## v1.3.0 - Améliorations diverse du backend - `17/05/2021`
 
 * Renommage du dossier assets en templates

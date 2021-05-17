@@ -3,7 +3,7 @@
 
 <button (click)="toggleIsAddingUser()">Ajouter un utilisateur</button>
 
-<div [appLoader]="isLoadingUsers">
+<div [appLoader]="isLoadingUsers" loaderHeight="150px" loaderWidth="150px">
   <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
     <thead>
       <tr>

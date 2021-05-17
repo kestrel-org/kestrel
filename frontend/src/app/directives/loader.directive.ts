@@ -7,6 +7,8 @@ import { v4 as uuidv4 } from 'uuid';
 export class LoaderDirective implements OnChanges {
   @Input() appLoader = true;
   @Input() loaderSource = 'assets/images/loader.gif';
+  @Input() loaderHeight = '200px';
+  @Input() loaderWidth = '200px';
 
   el: ElementRef;
   baseDisplay: string;
@@ -24,6 +26,8 @@ export class LoaderDirective implements OnChanges {
       const img = document.createElement('img');
       img.id = 'preloader_' + this.uuid;
       img.src = this.loaderSource;
+      img.style.height = this.loaderHeight;
+      img.style.width = this.loaderWidth;
       this.el.nativeElement.parentNode.append(img);
       this.loaderActive = true;
     } else if (this.loaderActive) {

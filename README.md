@@ -81,6 +81,8 @@ La configuration des routes se trouve dans le fichier ***routes.js***
 
 ## Versions
 
+* 1.4.0 - Mise à jour automatique des dépendances + largeur/hauteur sur la loader directive - `17/05/2021`
+
 * 1.3.0 - Améliorations diverses du backend - `17/05/2021`
 
 * 1.2.0 - Réécriture du backend - `08/05/2021`
