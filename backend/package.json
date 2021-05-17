@@ -35,7 +35,7 @@
     "chalk": "^2.4.2",
     "cors": "^2.8.5",
     "debug": "^4.3.1",
-    "dotenv": "^9.0.0",
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "express-swagger-generator": "^1.1.17",
