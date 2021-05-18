@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.4.0 - Mise à jour automatique des dépendances + largeur/hauteur sur la "Loader Directive" - `17/05/2021`
+## v1.4.0 - Mise à jour automatique des dépendances - `17/05/2021`
 
 * Ajout de [Depfu](https://depfu.com/) pour la création de PRs automatiques liées aux mises à jour des dépendances
 * Ajout de [Mergify](https://mergify.io/) pour merge automatiquement des PRs sur la branche principale
