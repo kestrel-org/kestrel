@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.4.1 - Fix CheckToken - `18/05/2021`
+
+* Fix de CheckToken
+
 ## v1.4.0 - Mise à jour automatique des dépendances - `17/05/2021`
 
 * Ajout de [Depfu](https://depfu.com/) pour la création de PRs automatiques liées aux mises à jour des dépendances
