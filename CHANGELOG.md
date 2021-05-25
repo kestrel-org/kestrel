@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.6.0 - Tests - `NONE`
+
+* Modification du stockage des logs (maintenant 1 fichier par jour)
+* TODO Tests
+
 ## v1.5.0 - Ajout de la config Helmet pour le backend - `25/05/2021`
 
 * Ajout de la config Helmet pour le backend

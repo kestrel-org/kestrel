@@ -47,6 +47,7 @@
     "mysql2": "^2.2.5",
     "pdfkit": "^0.12.1",
     "prompts": "^2.4.1",
+    "rotating-file-stream": "^2.1.5",
     "sequelize": "^6.6.2",
     "sequelize-auto": "^0.8.3"
   },
