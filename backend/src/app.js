@@ -11,18 +11,18 @@ const app = express();
 
 // Don't change the order
 const back_config = {
+  helmet: true,
+  swagger: true,
   session: true,
   cors: true,
-  checkToken: false,
-  swagger: true,
-  logger: true
+  logger: true,
+  checkToken: true
 }
 
 app.use(express.json());
 app.use(express.urlencoded({
   extended: false
 }));
-app.use(helmet());
 
 for (let extension in back_config) {
   if (back_config[extension]) {

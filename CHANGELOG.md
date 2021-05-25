@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.5.0 - Ajout de la config Helmet pour le backend - `25/05/2021`
+
+* Ajout de la config Helmet pour le backend
+* Modification de la "Content Security Policy" de Helmet afin d'avoir de nouveau accès a la documentation Swagger
+
 ## v1.4.1 - Fix CheckToken - `18/05/2021`
 
 * Fix de CheckToken
