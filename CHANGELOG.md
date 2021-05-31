@@ -1,9 +1,8 @@
 # Changelog
 
-## v1.6.0 - Tests - `NONE`
+## v1.6.0 - Ajout de checkAuthenticated et Refactor du backend - `NONE`
 
 * Modification du stockage des logs (maintenant 1 fichier par jour)
-* TODO Tests
 * Ajout d'un loader dans les scripts bash
 * Ajout du dialect dans le fichier .env
 * Ajout de la config checkAuthenticated pour le backend

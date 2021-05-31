@@ -63,6 +63,7 @@ async function addRoute(router_name) {
 
         const responses = {
             checkToken,
+            checkAuthenticated,
             path,
             model
         } = await prompts(getPrompts(router_name, models), {

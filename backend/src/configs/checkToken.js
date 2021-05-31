@@ -16,7 +16,7 @@ const checkToken = async (req, res, next) => {
 
         const options = {
             https: {
-                certificateAuthority: fs.readFileSync(__dirname + '/../../../tmp/xxxx.ca', 'utf8')
+                certificateAuthority: fs.readFileSync(__dirname + '/../../../tmp/xxx.ca', 'utf8')
             },
             method: 'POST',
             headers: {

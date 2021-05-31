@@ -1,3 +1,3 @@
 module.exports = [
-  { checkToken: false, path: 'exemple', router: 'exemple' }
+  { checkToken: false, checkAuthenticated: false, path: 'exemple', router: 'exemple' }
 ]

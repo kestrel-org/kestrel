@@ -4,19 +4,23 @@
 const express = require('express');
 const routes = require('./routes/routes');
 const path = require("path");
+const compose = require('compose-middleware').compose
 require('dotenv').config();
 
 const app = express();
 
 // Don't change the order
 const back_config = {
-  helmet: { active: true, routeOption: false },
-  swagger: { active: true, routeOption: false },
-  session: { active: true, routeOption: false },
-  cors: { active: true, routeOption: false },
-  logger: { active: true, routeOption: false },
-  checkToken: { active: true, routeOption: true },
-  checkAuthenticated: { active: true, routeOption: true },
+  helmet: true,
+  swagger: true,
+  session: true,
+  cors: true,
+  logger: true,
+}
+
+const middlewares = {
+  checkToken: false,
+  checkAuthenticated: false
 }
 
 app.use(express.json());
@@ -24,23 +28,29 @@ app.use(express.urlencoded({
   extended: false
 }));
 
-const routesOptions = [];
 for (let extension in back_config) {
-  if (back_config[extension].active) {
-    if (back_config[extension].routeOption) {
-      routesOptions[extension] = require(`./configs/${extension}`);
-    } else {
-      require(`./configs/${extension}`)(app);
-    }
+  if (back_config[extension]) {
+    require(`./configs/${extension}`)(app);
   }
 }
 
-console.log(routesOptions);
+const routesOptions = [];
+for (let middleware in middlewares) {
+  if (middlewares[middleware]) {
+    routesOptions[middleware] = require(`./configs/${middleware}`);
+  }
+}
 
 for (let route of routes) {
-  if (!route.checkToken) {
-    app.use(process.env.API_BASE_PATH + "/" + route.path, require(`./routes/${route.router}`));
+  const middlewares = [];
+  if (route.checkToken) {
+    middlewares.push(routesOptions["checkToken"]);
   }
+  if (route.checkAuthenticated) {
+    middlewares.push(routesOptions["checkAuthenticated"]);
+  }
+
+  app.use(process.env.API_BASE_PATH + "/" + route.path, compose(middlewares), require(`./routes/${route.router}`));
 }
 
 // catch 404 and forward to error handler

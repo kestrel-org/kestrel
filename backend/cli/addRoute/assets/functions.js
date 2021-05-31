@@ -32,6 +32,14 @@ function getPrompts(router_name, models) {
             inactive: 'no'
         },
         {
+            type: 'toggle',
+            name: 'checkAuthenticated',
+            message: 'Check if the user is authenticated ?',
+            initial: false,
+            active: 'yes',
+            inactive: 'no'
+        },
+        {
             type: 'text',
             name: 'path',
             initial: router_name.split('/').pop(),
@@ -109,13 +117,14 @@ function buildPath(router_path) {
 
 // Check if router is present in the routes.js file and returns the new routes
 
-function checkForRouter(routes,{checkToken,path}, router_name) {
+function checkForRouter(routes,{checkToken, checkAuthenticated, path}, router_name) {
     let found = false;
     for (let i = 0; i < routes.length; i++) {
         if (routes[i].router == router_name) {
             found = true;
             routes[i] = {
                 checkToken: checkToken,
+                checkAuthenticated: checkAuthenticated,
                 path: path,
                 router: router_name
             }
@@ -124,6 +133,7 @@ function checkForRouter(routes,{checkToken,path}, router_name) {
     if (!found) {
         routes.push({
             checkToken: checkToken,
+            checkAuthenticated: checkAuthenticated,
             path: path,
             router: router_name
         })
