@@ -4,11 +4,15 @@ if [ -n "$1" ]
   then
     ENV="${1^^}"
 fi
+me=`basename "$0"`
 msg="\e[1;32m"
 error="\e[31m"
 neutre="\e[0;m"
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 envVARS=("DB_SCHEMA_$ENV" "DB_USERNAME_$ENV" "DB_PASSWORD_$ENV")
+
+echo -e "\n${msg}[${me^^}]${neutre}"
+
 for i in "${envVARS[@]}"
 do
     tmp=$(grep $i= $SCRIPT_DIR/../backend/.env | cut -f2- -d=)
@@ -20,7 +24,7 @@ do
     declare $i=$tmp
 done
 
-echo -e "${msg}----- Initialisation de la base de données -----${neutre}"
+echo -e "\n${msg}----- Initialisation de la base de données -----${neutre}"
 cd "${SCRIPT_DIR}/../backend"
 
 echo -e "${msg}\nsuppression de la base de données ...${neutre}"
