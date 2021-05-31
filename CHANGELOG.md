@@ -4,6 +4,8 @@
 
 * Modification du stockage des logs (maintenant 1 fichier par jour)
 * TODO Tests
+* Ajout d'un loader dans les scripts bash
+* Ajout du dialect dans le fichier .env
 
 ## v1.5.0 - Ajout de la config Helmet pour le backend - `25/05/2021`
 
