@@ -1,6 +1,5 @@
 const chalk = require('chalk');
 const prompts = require('prompts');
-prompts.inject([false,"test/exemple".split('/').pop(),0]);
 const fs = require('fs');
 const util = require('util');
 const {
