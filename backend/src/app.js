@@ -39,13 +39,11 @@ for (let middleware in middlewares) {
 
 for (let route of routes) {
   const middlewares = [];
-  if (route.checkToken) {
-    middlewares.push(routesOptions["checkToken"]);
+  for(let routeOption in routesOptions){
+    if(route[routeOption]){
+      middlewares.push(routesOptions[routeOption]);
+    }
   }
-  if (route.checkAuthenticated) {
-    middlewares.push(routesOptions["checkAuthenticated"]);
-  }
-
   app.use(process.env.API_BASE_PATH + "/" + route.path, compose(middlewares), require(`./routes/${route.router}`));
 }
 
