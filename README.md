@@ -35,7 +35,7 @@ Several utilities are built in the template :
 1. Fork the git repository
 2. Git clone your fork locally
 3. Install dependencies with the script located in ***utils/installDependencies.sh***
-4. Configurer les accès à la base de données dans ***backend/.env*** for Developpement, Test and Production environnements
+4. Configure database access in ***backend/.env*** for Developpement, Test and Production environnements
 5. You can modify the environnement variables in this file to fit your needs
 6. To create and populate the exemple database use the script located in ***utils/initDB.sh***
 
