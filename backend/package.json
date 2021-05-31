@@ -7,7 +7,7 @@
     "babel-node": "babel-node",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
     "generate-models": "bash -c 'sequelize-auto -o \"./src/models\" -d $0 -h localhost -u $1 -p 3306 -x $2 -e mysql --skipTables sequelizemeta --noInitModels'",
-    "addRoute": "node ./cli/addRoute.js"
+    "addRoute": "node ./cli/addRoute/main.js"
   },
   "nodemonConfig": {
     "ignore": [
