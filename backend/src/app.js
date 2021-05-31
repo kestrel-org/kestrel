@@ -29,16 +29,12 @@ app.use(express.urlencoded({
 }));
 
 for (let extension in back_config) {
-  if (back_config[extension]) {
     require(`./configs/${extension}`)(app);
-  }
 }
 
 const routesOptions = [];
 for (let middleware in middlewares) {
-  if (middlewares[middleware]) {
     routesOptions[middleware] = require(`./configs/${middleware}`);
-  }
 }
 
 for (let route of routes) {
