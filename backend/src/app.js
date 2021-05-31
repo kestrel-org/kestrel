@@ -2,7 +2,6 @@
  * Module dependencies.
  */
 const express = require('express');
-const helmet = require('helmet');
 const routes = require('./routes/routes');
 const path = require("path");
 require('dotenv').config();
@@ -11,12 +10,13 @@ const app = express();
 
 // Don't change the order
 const back_config = {
-  helmet: true,
-  swagger: true,
-  session: true,
-  cors: true,
-  logger: true,
-  checkToken: true
+  helmet: { active: true, routeOption: false },
+  swagger: { active: true, routeOption: false },
+  session: { active: true, routeOption: false },
+  cors: { active: true, routeOption: false },
+  logger: { active: true, routeOption: false },
+  checkToken: { active: true, routeOption: true },
+  checkAuthenticated: { active: true, routeOption: true },
 }
 
 app.use(express.json());
@@ -24,11 +24,18 @@ app.use(express.urlencoded({
   extended: false
 }));
 
+const routesOptions = [];
 for (let extension in back_config) {
-  if (back_config[extension]) {
-    require(`./configs/${extension}`)(app);
+  if (back_config[extension].active) {
+    if (back_config[extension].routeOption) {
+      routesOptions[extension] = require(`./configs/${extension}`);
+    } else {
+      require(`./configs/${extension}`)(app);
+    }
   }
 }
+
+console.log(routesOptions);
 
 for (let route of routes) {
   if (!route.checkToken) {

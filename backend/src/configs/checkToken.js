@@ -1,57 +1,51 @@
-const routes = require('../routes/routes');
 const fs = require('fs');
 const got = require('got');
 const config = {
 
 }
-module.exports = (app) => {
-    const checkToken = async (req, res, next) => {
-        if (req.method == 'OPTIONS') {
-            next();
-        } else {
-            const token_id = req.headers.authorization;
 
-            const body = '{"token_id": "' + token_id + '", "client": "' + process.env.JWT_CLIENT_NAME + '" }';
+const checkToken = async (req, res, next) => {
+    if (req.method == 'OPTIONS') {
+        next();
+    } else {
+        const token_id = req.headers.authorization;
 
-            const url = process.env.JWT_AUTHORIZATION_SERVER_URL + '/api/tokens';
+        const body = '{"token_id": "' + token_id + '", "client": "' + process.env.JWT_CLIENT_NAME + '" }';
 
-            const options = {
-                https: {
-                    certificateAuthority: fs.readFileSync(__dirname + '/../../../tmp/xxxx.ca', 'utf8')
-                },
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: body
-            };
+        const url = process.env.JWT_AUTHORIZATION_SERVER_URL + '/api/tokens';
 
-            try {
-                const response = await got.post(url, options);
-                const data = JSON.parse(response.body);
+        const options = {
+            https: {
+                certificateAuthority: fs.readFileSync(__dirname + '/../../../tmp/xxxx.ca', 'utf8')
+            },
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: body
+        };
 
-                if (data.is_good) {
-                    next();
-                } else {
-                    res.status(401).send({
-                        code: 401,
-                        error: data.error
-                    });
-                }
+        try {
+            const response = await got.post(url, options);
+            const data = JSON.parse(response.body);
 
-            } catch (error) {
+            if (data.is_good) {
+                next();
+            } else {
                 res.status(401).send({
                     code: 401,
-                    error: error
+                    error: data.error
                 });
             }
+
+        } catch (error) {
+            res.status(401).send({
+                code: 401,
+                error: error
+            });
         }
     }
-
-    for (let route of routes) {
-        if (route.checkToken) {
-            app.use(process.env.API_BASE_PATH + "/" + route.path, checkToken, require(`../routes/${route.router}`));
-        }
-    }
-
 }
+
+
+module.exports = checkToken;

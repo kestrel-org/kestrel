@@ -6,6 +6,7 @@
 * TODO Tests
 * Ajout d'un loader dans les scripts bash
 * Ajout du dialect dans le fichier .env
+* Ajout de la config checkAuthenticated pour le backend
 
 ## v1.5.0 - Ajout de la config Helmet pour le backend - `25/05/2021`
 
