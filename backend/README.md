@@ -1,23 +1,23 @@
 
-# Backend Template Node Angular
+# Backend Template - Node Angular
 
-## Lancer le projet
+## Running the app
 
-Pour lancer le projet utilisez la commande 
+To start the app run :
 ```
 $ npm start
 ```
-L'url de base de l'api est la suivante : http://localhost:4000/api
+You can acces the api on http://localhost:4000/api
 
-La documentation se situe a l'adresse suivante : http://localhost:4000/api-docs
+Acces the documentation on http://localhost:4000/api-docs
 
-## Configuration du projet
+## Project configuration
 
-Toute la configuration de l'api se situe dans le fichier .env
+The configuration is in the .env file
 
-## Test du projet
+## Tests
 
-Pour tester le projet utilisez la commande
+To test run :
 ```
 $ npm test
 ```
