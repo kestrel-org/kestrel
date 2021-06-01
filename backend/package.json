@@ -31,7 +31,7 @@
     "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.3",
     "@babel/node": "^7.14.2",
-    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-env": "^7.14.4",
     "chalk": "^4.1.1",
     "compose-middleware": "^5.0.1",
     "cors": "^2.8.5",
