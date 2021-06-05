@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: push-event-dispatcher
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  repository_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  update-parent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: send event to other repo
+        run: |
+          curl -X POST https://api.github.com/repos/template-angular-node/kli-cli/dispatches \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -u ${{ secrets.ACCESS_TOKEN }} \
+          --data '{"event_type": "Update angular-node template"}'
