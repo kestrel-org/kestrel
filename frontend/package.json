@@ -24,7 +24,7 @@
     "@angular/router": "^11.2.14",
     "@sweetalert2/ngx-sweetalert2": "^10.0.0",
     "angular-datatables": "^11.2.0",
-    "datatables.net": "^1.10.24",
+    "datatables.net": "^1.10.25",
     "datatables.net-dt": "^1.10.24",
     "jquery": "^3.6.0",
     "rxjs": "^6.5.3",
