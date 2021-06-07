@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-https://template-angular-node.github.io/
+https://sflorent.gitbook.io/template-angular-node/
 
 ## Getting started
 
