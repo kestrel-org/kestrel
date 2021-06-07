@@ -27,7 +27,7 @@ Several utilities are built in the template :
 
 ## Documentation
 
-<a href="https://sflorent.gitbook.io/template-angular-node/" target="_blank">Documentation</a>
+[Documentation](https://sflorent.gitbook.io/template-angular-node/)
 
 ## Author(s)
 
