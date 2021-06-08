@@ -1,11 +1,13 @@
 # Changelog
 
-## v1.6.0 - Ajout de checkAuthenticated et Refactor du backend - `NONE`
+## v2.0.0 - Cli et docs - `NONE`
 
 * Modification du stockage des logs (maintenant 1 fichier par jour)
 * Ajout d'un loader dans les scripts bash
 * Ajout du dialect dans le fichier .env
 * Ajout de la config checkAuthenticated pour le backend
+* Traduction en anglais
+* Ajout de gitbook pour la documentation
 
 ## v1.5.0 - Ajout de la config Helmet pour le backend - `25/05/2021`
 
