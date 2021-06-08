@@ -30,7 +30,7 @@ if [ ! -d "$DIR" ]; then
     startLoader
     npm install
     endLoader
-    echo -e "\n ${msg}fin de l'installation des dépendances du backend ${neutre} \n"
+    echo -e "\n ${msg}fin de l'installation des dépendances du backend${neutre} \n"
 else
     echo -e "\n ${msg}dépendances du backend déjà installées${neutre} \n"
 fi

@@ -24,7 +24,7 @@ endLoader() {
 echo -e "\n${msg}[${me^^}]${neutre}"
 
 # Suppression du précédent dossier
-echo -e "\n ${msg}suppression du précédent dossier ... ${neutre} \n"
+echo -e "\n ${msg}suppression du précédent dossier ...${neutre} \n"
 startLoader
 rm -rf "${SCRIPT_DIR}/../dist/"
 endLoader

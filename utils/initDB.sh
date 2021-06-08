@@ -17,7 +17,7 @@ for i in "${envVARS[@]}"
 do
     tmp=$(grep $i= $SCRIPT_DIR/../backend/.env | cut -f2- -d=)
     if [ ${#tmp} -lt 1 ] ; then
-        echo -e "${error}La variable d'environnement '$i' n'a pas été spécifié correctement. ${neutre}"
+        echo -e "${error}La variable d'environnement '$i' n'a pas été spécifié correctement.${neutre}"
         read -p "Appuyer sur n'importe quelle touche pour continuer ..."
         exit 1
     fi
