@@ -1,5 +1,6 @@
 # Roadmap
 
+* Delete the Angular dist folder in buildForProd
 * Mailer
 * Translate code
 * Translate changelog
