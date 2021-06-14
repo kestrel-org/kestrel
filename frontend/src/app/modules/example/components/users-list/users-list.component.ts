@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 
-import { ExempleService } from "../../../../services/exemple.service";
+import { ExampleService } from "../../../../services/example.service";
 
 import { User } from "../../../../interfaces/user";
 import { Subject } from "rxjs";
@@ -15,25 +15,25 @@ enum SUCCESS_SWAL_TYPE {
 }
 
 const SUCCESS_SWAL_TITLE_STRING = {
-  delete: "Supprimé !",
-  edit: "Modifié !",
-  view: "Chargé !",
-  create: "Ajouté !",
+  delete: "Deleted !",
+  edit: "Updated !",
+  view: "Loaded !",
+  create: "Added !",
 };
 
 const SUCCESS_SWAL_TEXT_STRING = {
-  delete: "L'utilisateur a été supprimée.",
-  edit: "L'observation a été modifiée.",
-  view: "Les détails ont bien été chargés.",
-  create: "L'utilisateur a bien été créé.",
+  delete: "The user has been deleted.",
+  edit: "The user has been updated.",
+  view: "The details have been loaded.",
+  create: "The user has been added.",
 };
 
 @Component({
-  selector: "app-liste-users",
-  templateUrl: "./liste-users.component.html",
-  styleUrls: ["./liste-users.component.scss"],
+  selector: "app-users-list",
+  templateUrl: "./users-list.component.html",
+  styleUrls: ["./users-list.component.scss"],
 })
-export class ListeUsersComponent implements OnInit, OnDestroy {
+export class UsersListComponent implements OnInit, OnDestroy {
   @ViewChild(DataTableDirective, { static: false })
   dtElement: DataTableDirective;
   @ViewChild("successSwal") private successSwal: SwalComponent;
@@ -57,15 +57,12 @@ export class ListeUsersComponent implements OnInit, OnDestroy {
 
   dtTrigger: Subject<any> = new Subject<any>();
 
-  constructor(private exempleService: ExempleService) {}
+  constructor(private exampleService: ExampleService) {}
 
   ngOnInit(): void {
     this.dtOptions = {
       pagingType: "full_numbers",
-      responsive: true,
-      language: {
-        url: "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json",
-      },
+      responsive: true
     };
 
     this.loadUsers();
@@ -84,7 +81,7 @@ export class ListeUsersComponent implements OnInit, OnDestroy {
       dtInstance.destroy();
     }
 
-    const data = await this.exempleService.getUsers();
+    const data = await this.exampleService.getUsers();
     this.users = data.users;
     this.dtTrigger.next("");
 
@@ -93,7 +90,7 @@ export class ListeUsersComponent implements OnInit, OnDestroy {
 
   async addUser() {
     if (this.checkNewUser()) {
-      await this.exempleService.postUsers(
+      await this.exampleService.postUsers(
         this.newUser.login,
         this.newUser.password,
         this.newUser.email
@@ -107,20 +104,20 @@ export class ListeUsersComponent implements OnInit, OnDestroy {
   }
 
   async getDetails(id) {
-    const data = await this.exempleService.getUsersById(id);
+    const data = await this.exampleService.getUsersById(id);
     this.userDetails = data.user;
     this.fireSuccessSwal(SUCCESS_SWAL_TYPE.view);
   }
 
   async deleteUser(id) {
-    await this.exempleService.deleteUsersById(id);
+    await this.exampleService.deleteUsersById(id);
     this.loadUsers();
     this.clearUserDetails();
     this.fireSuccessSwal(SUCCESS_SWAL_TYPE.delete);
   }
 
   async saveUser() {
-    await this.exempleService.putUsers(
+    await this.exampleService.putUsers(
       this.userDetails.id,
       this.userDetails.login,
       this.userDetails.password,

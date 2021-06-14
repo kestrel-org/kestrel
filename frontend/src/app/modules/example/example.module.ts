@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { ExempleRoutingModule } from './exemple-routing.module';
-import { ListeUsersComponent } from './components/liste-users/liste-users.component';
+import { ExampleRoutingModule } from './example-routing.module';
+import { UsersListComponent } from './components/users-list/users-list.component';
 import { DirectivesModule } from './../../directives/directives.module';
 
 import { DataTablesModule } from 'angular-datatables';
@@ -12,15 +12,15 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
-    ListeUsersComponent
+    UsersListComponent
   ],
   imports: [
     CommonModule,
-    ExempleRoutingModule,
+    ExampleRoutingModule,
     DataTablesModule,
     SweetAlert2Module,
     DirectivesModule,
     FormsModule
   ]
 })
-export class ExempleModule { }
+export class ExampleModule { }

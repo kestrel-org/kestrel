@@ -1,0 +1,64 @@
+<h1>Template Angular - Node / Express / Sequelize</h1>
+<h2>Example of users management</h2>
+<a target="__blank" href="https://sflorent.gitbook.io/template-angular-node/">Documentation</a>
+<br /><br />
+
+<button (click)="toggleIsAddingUser()">Add a user</button>
+
+<div [appLoader]="isLoadingUsers" loaderHeight="150px" loaderWidth="150px">
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>Created at</th>
+        <th>Updated at</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.login }}</td>
+        <td>{{ user.password }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.createdAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}</td>
+        <td>{{ user.updatedAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}</td>
+        <td>
+          <button (click)="getDetails(user.id)">View details</button>
+          <button
+            [swal]="{ title: 'Delete the user ?', text: 'This action is irreversible.', icon: 'question', showCancelButton: true }"
+            (confirm)="deleteUser(user.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="isAddingUser">
+  <h3>Add a user</h3>
+  <span><strong>Username:</strong></span><input type="text" [(ngModel)]=" newUser.login" /> <br />
+  <span><strong>Password:</strong></span><input type="text" [(ngModel)]=" newUser.password" /> <br />
+  <span><strong>Email:</strong></span><input size="50" type="text" [(ngModel)]=" newUser.email" /> <br />
+  <button (click)="addUser()">Add</button>
+</div>
+
+<div *ngIf="userDetails">
+  <h3>User N°{{ userDetails.id }} - {{ userDetails.login }}</h3>
+  <span><strong>Username:</strong></span><input type="text" [(ngModel)]=" userDetails.login" /> <br />
+  <span><strong>Password:</strong></span><input type="text" [(ngModel)]=" userDetails.password" /> <br />
+  <span><strong>Email:</strong></span><input size="50" type="text" [(ngModel)]=" userDetails.email" /> <br />
+  <span><strong>Created at:</strong> {{ userDetails.createdAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }} </span> <br />
+  <span><strong>Updated at:</strong> {{ userDetails.updatedAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }} </span> <br />
+  <button (click)="saveUser()">Save</button>
+</div>
+
+<!-- Success Modal -->
+<swal #successSwal icon="success" timer="1000" timerProgressBar="true" [showConfirmButton]="false">
+</swal>
+
+<!-- Error Modal -->
+<swal #errorSwal title="Error !" text="Please fill in all fields." icon="error">
+</swal>

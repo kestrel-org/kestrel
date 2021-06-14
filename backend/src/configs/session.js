@@ -4,7 +4,7 @@ const config = {
 }
 module.exports = (app) => {
     app.use(session({
-        secret: 'HvD56y!cgQnM',
+        secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
         cookie: {

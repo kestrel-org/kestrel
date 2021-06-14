@@ -12,7 +12,7 @@ https://sflorent.gitbook.io/template-angular-node/
 
 This template aims to give a solid structure to create a project based on **Angular** for the *Frontend* and **Node / Express et Sequelize** for the *backend*.
 
-Several utilities are built in the template : 
+Several utilities are built in the template :
 
 * A bash script to initialize the database and automatically creates models
 * A bash script to create the folder *dist* for production purposes

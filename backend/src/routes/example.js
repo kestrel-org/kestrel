@@ -5,21 +5,21 @@ const models = require('../models');
 
 /**
  * @typedef User
- * @property {integer} id.required - Identifiant - eg: 1
+ * @property {integer} id.required - Id - eg: 1
  * @property {string} login.required - Login - eg: Ivy234
  * @property {string} password.required - Password - eg: zbtLMEv8
  * @property {string} email.required - Email - eg: Ivy234@hotmail.com
- * @property {string} createdAt.required - Date de creation - eg: 2021-04-27T08:34:01.000Z
- * @property {string} updatedAt.required - Date de mise à jour - eg: 2021-04-27T08:34:01.000Z
+ * @property {string} createdAt.required - Creation date - eg: 2021-04-27T08:34:01.000Z
+ * @property {string} updatedAt.required - Update date - eg: 2021-04-27T08:34:01.000Z
  */
 
 /**
- * @route GET /exemple/users
- * @summary Retourne la liste des utilisateurs
- * @group Exemple
- * @returns {Array.<User>} 200 - Liste des utilisateurs
- * @returns {Error}  400 - Erreur dans la syntaxe de la requête
- * @returns {Error}  401 - Erreur lors de l'authentification
+ * @route GET /example/users
+ * @summary Return the users list
+ * @group Example
+ * @returns {Array.<User>} 200 - The users list
+ * @returns {Error}  400 - Bad request
+ * @returns {Error}  401 - Unauthorized
  */
 router.get('/users', async function (req, res, next) {
   try {
@@ -35,13 +35,13 @@ router.get('/users', async function (req, res, next) {
 });
 
 /**
- * @route POST /exemple/users
- * @summary Créer un utilisateur
- * @group Exemple
- * @param {User.model} user.body.required - le nouvel utilisateur
- * @returns {User} 200 - L'utilisateur créé
- * @returns {Error}  400 - Erreur dans la syntaxe de la requête
- * @returns {Error}  401 - Erreur lors de l'authentification
+ * @route POST /example/users
+ * @summary Create a user
+ * @group Example
+ * @param {User.model} user.body.required - the new user
+ * @returns {User} 200 - The user created
+ * @returns {Error}  400 - Bad request
+ * @returns {Error}  401 - Unauthorized
  */
 router.post('/users', async function (req, res, next) {
   try {
@@ -57,13 +57,13 @@ router.post('/users', async function (req, res, next) {
 });
 
 /**
- * @route PUT /exemple/users
- * @summary Modifie un utilisateur
- * @group Exemple
- * @param {User.model} user.body.required - l'utilisateur modifié
- * @returns {User} 200 - L'utilisateur modifié
- * @returns {Error}  400 - Erreur dans la syntaxe de la requête
- * @returns {Error}  401 - Erreur lors de l'authentification
+ * @route PUT /example/users
+ * @summary Update a user
+ * @group Example
+ * @param {User.model} user.body.required - the updated user
+ * @returns {User} 200 - The updated user
+ * @returns {Error}  400 - Bad request
+ * @returns {Error}  401 - Unauthorized
  */
 router.put('/users', async function (req, res, next) {
   try {
@@ -88,13 +88,13 @@ router.put('/users', async function (req, res, next) {
 });
 
 /**
- * @route DELETE /exemple/users
- * @summary Supprime l'utilisateur dont l'id est fourni en paramètre
- * @group Exemple
- * @param {integer} id.query.required - l'identifiant de l'utilisateur - eg: 1
+ * @route DELETE /example/users
+ * @summary Delete a user with the id in parameters
+ * @group Example
+ * @param {integer} id.query.required - the user id - eg: 1
  * @returns {object} 200 - OK
- * @returns {Error}  400 - Erreur dans la syntaxe de la requête
- * @returns {Error}  401 - Erreur lors de l'authentification
+ * @returns {Error}  400 - Bad request
+ * @returns {Error}  401 - Unauthorized
  */
 router.delete('/users', async function (req, res, next) {
   try {
@@ -114,13 +114,13 @@ router.delete('/users', async function (req, res, next) {
 });
 
 /**
- * @route GET /exemple/users/{id}
- * @summary Retourne l'utilisateur dont l'id est fourni en paramètre
- * @group Exemple
- * @param {integer} id.path.required - l'identifiant de l'utilisateur - eg: 1
- * @returns {User} 200 - L'utilisateur
- * @returns {Error}  400 - Erreur dans la syntaxe de la requête
- * @returns {Error}  401 - Erreur lors de l'authentification
+ * @route GET /example/users/{id}
+ * @summary Return the user with the id in parameters
+ * @group Example
+ * @param {integer} id.path.required - the user id - eg: 1
+ * @returns {User} 200 - The user
+ * @returns {Error}  400 - Bad request
+ * @returns {Error}  401 - Unauthorized
  */
 router.get('/users/:id', async function (req, res, next) {
   try {

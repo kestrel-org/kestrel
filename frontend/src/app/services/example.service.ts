@@ -4,7 +4,7 @@ import { environment } from "../../environments/environment";
 @Injectable({
   providedIn: "root",
 })
-export class ExempleService {
+export class ExampleService {
 
   BASEURL: string = environment.API_URL;
 
@@ -19,22 +19,22 @@ export class ExempleService {
   };
 
   getUsers(): Promise<any> {
-    return this.http.get(this.BASEURL + "exemple/users", this.httpOptions).toPromise();
+    return this.http.get(this.BASEURL + "example/users", this.httpOptions).toPromise();
   }
 
   getUsersById(id: number): Promise<any> {
-    return this.http.get(this.BASEURL + "exemple/users/" + id, this.httpOptions).toPromise();
+    return this.http.get(this.BASEURL + "example/users/" + id, this.httpOptions).toPromise();
   }
 
   deleteUsersById(id: number): Promise<any> {
-    return this.http.delete(this.BASEURL + "exemple/users?id=" + id, this.httpOptions).toPromise();
+    return this.http.delete(this.BASEURL + "example/users?id=" + id, this.httpOptions).toPromise();
   }
 
   postUsers(login: string, password: string, email: string): Promise<any> {
-    return this.http.post(this.BASEURL + "exemple/users", {login, password, email}, this.httpOptions).toPromise();
+    return this.http.post(this.BASEURL + "example/users", {login, password, email}, this.httpOptions).toPromise();
   }
 
   putUsers(id: number, login: string, password: string, email: string): Promise<any> {
-    return this.http.put(this.BASEURL + "exemple/users", {id, login, password, email}, this.httpOptions).toPromise();
+    return this.http.put(this.BASEURL + "example/users", {id, login, password, email}, this.httpOptions).toPromise();
   }
 }
