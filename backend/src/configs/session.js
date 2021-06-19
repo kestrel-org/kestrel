@@ -2,9 +2,9 @@ const session = require('express-session');
 const config = {
 
 }
-module.exports = (app) => {
+const core = (app) => {
     app.use(session({
-        secret: process.env.SESSION_SECRET,
+        secret: 'HvD56y!cgQnM',
         resave: false,
         saveUninitialized: false,
         cookie: {
@@ -13,4 +13,9 @@ module.exports = (app) => {
             secure: false // true only for https
         }
     }));
+}
+
+module.exports = {
+    config:config,
+    default:core
 }

@@ -14,4 +14,7 @@ const checkAuthenticated = async (req, res, next) => {
     }
 }
 
-module.exports = checkAuthenticated;
+module.exports = {
+    config:config,
+    default:checkAuthenticated
+}

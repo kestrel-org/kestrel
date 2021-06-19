@@ -9,6 +9,10 @@ const config = {
         }
     }
 }
-module.exports = (app) => {
+const core = (app) => {
     app.use(helmet(config.HELMET_OPTIONS));
+}
+module.exports = {
+    config:config,
+    default:core
 }

@@ -30,7 +30,12 @@ const config = {
     }
 }
 
-module.exports = (app) => {
+const core = (app) => {
     const expressSwagger = require('express-swagger-generator')(app);
     expressSwagger(config.def)
+}
+
+module.exports = {
+    config:config,
+    default:core
 }
