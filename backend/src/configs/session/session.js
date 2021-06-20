@@ -1,8 +1,7 @@
 const session = require('express-session');
-const config = {
+const config = require('./config')
 
-}
-const core = (app) => {
+module.exports = (app) => {
     app.use(session({
         secret: 'HvD56y!cgQnM',
         resave: false,
@@ -13,9 +12,4 @@ const core = (app) => {
             secure: false // true only for https
         }
     }));
-}
-
-module.exports = {
-    config:config,
-    default:core
 }

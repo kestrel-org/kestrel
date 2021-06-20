@@ -1,4 +1,4 @@
-const config = {
+module.exports = {
     def: {
         swaggerDefinition: {
             info: {
@@ -26,16 +26,6 @@ const config = {
             defaultSecurity: 'Bearer'
         },
         basedir: __dirname, //app absolute path
-        files: ['../routes/**/*.js'] //Path to the API handle folder
+        files: ['../../routes/**/*.js'] //Path to the API handle folder
     }
-}
-
-const core = (app) => {
-    const expressSwagger = require('express-swagger-generator')(app);
-    expressSwagger(config.def)
-}
-
-module.exports = {
-    config:config,
-    default:core
 }

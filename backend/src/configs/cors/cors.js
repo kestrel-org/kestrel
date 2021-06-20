@@ -1,9 +1,7 @@
 const cors = require('cors');
-const config = {
-    whitelist: ['http://localhost:4200', 'http://localhost:4000']
-}
+const config = require('./config')
 
-const core = (app) => {
+module.exports = (app) => {
     const corsOptions = {
         credentials: true,
         origin: function (origin, callback) {
@@ -15,8 +13,4 @@ const core = (app) => {
         }
     }
     app.use(cors(corsOptions));
-}
-module.exports = {
-    config:config,
-    default:core
 }

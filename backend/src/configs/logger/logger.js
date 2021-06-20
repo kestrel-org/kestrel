@@ -1,10 +1,9 @@
 const path = require("path");
 const rfs = require('rotating-file-stream');
 const logger = require('morgan');
-const config = {
+const config = require('./config')
 
-}
-const core = (app) => {
+module.exports = (app) => {
     // create a rotating write stream
     const accessLogStream = rfs.createStream('access.log', {
         interval: '1d', // rotate daily
@@ -14,7 +13,3 @@ const core = (app) => {
     app.use(logger('combined', { stream: accessLogStream }));
 }
 
-module.exports = {
-    config:config,
-    default:core
-}

@@ -1,10 +1,8 @@
 const fs = require('fs');
 const got = require('got');
-const config = {
+const config = require('./config.json')
 
-}
-
-const checkToken = async (req, res, next) => {
+module.exports = async (req, res, next) => {
     if (req.method == 'OPTIONS') {
         next();
     } else {
@@ -45,10 +43,4 @@ const checkToken = async (req, res, next) => {
             });
         }
     }
-}
-
-
-module.exports = {
-    config:config,
-    default:checkToken
 }

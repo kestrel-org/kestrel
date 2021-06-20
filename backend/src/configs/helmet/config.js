@@ -1,5 +1,4 @@
-const helmet = require('helmet');
-const config = {
+module.exports = {
     HELMET_OPTIONS: {
         contentSecurityPolicy: {
             useDefaults: true,
@@ -8,11 +7,4 @@ const config = {
             }
         }
     }
-}
-const core = (app) => {
-    app.use(helmet(config.HELMET_OPTIONS));
-}
-module.exports = {
-    config:config,
-    default:core
 }

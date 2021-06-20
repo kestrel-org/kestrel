@@ -29,12 +29,12 @@ app.use(express.urlencoded({
 }));
 
 for (let extension in back_config) {
-    require(`./configs/${extension}`).default(app);
+    require(`./configs/${extension}/${extension}`)(app);
 }
 
 const routesOptions = [];
 for (let middleware in middlewares) {
-    routesOptions[middleware] = require(`./configs/${middleware}`).default;
+    routesOptions[middleware] = require(`./configs/${middleware}/${middleware}`);
 }
 
 for (let route of routes) {
