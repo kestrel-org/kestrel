@@ -8,7 +8,7 @@
 
 https://sflorent.gitbook.io/template-angular-node/
 
-## Introduction
+## Introduction 
 
 This template aims to give a solid structure to create a project based on **Angular** for the *Frontend* and **Node / Express et Sequelize** for the *backend*.
 
