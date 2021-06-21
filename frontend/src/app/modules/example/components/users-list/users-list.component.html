@@ -1,58 +1,69 @@
-<h1>Template Angular - Node / Express / Sequelize</h1>
-<h2>Example of users management</h2>
-<a target="__blank" href="https://sflorent.gitbook.io/template-angular-node/">Documentation</a>
-<br /><br />
+<!-- Import Font Awesome ICONS -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+  integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
-<button (click)="toggleIsAddingUser()">Add a user</button>
-
-<div [appLoader]="isLoadingUsers" loaderHeight="150px" loaderWidth="150px">
-  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Username</th>
-        <th>Password</th>
-        <th>Email</th>
-        <th>Created at</th>
-        <th>Updated at</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.id }}</td>
-        <td>{{ user.login }}</td>
-        <td>{{ user.password }}</td>
-        <td>{{ user.email }}</td>
-        <td>{{ user.createdAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}</td>
-        <td>{{ user.updatedAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}</td>
-        <td>
-          <button (click)="getDetails(user.id)">View details</button>
-          <button
-            [swal]="{ title: 'Delete the user ?', text: 'This action is irreversible.', icon: 'question', showCancelButton: true }"
-            (confirm)="deleteUser(user.id)">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="top-bar">
+  <span>Template Angular - Node / Express / Sequelize</span>
 </div>
 
-<div *ngIf="isAddingUser">
-  <h3>Add a user</h3>
-  <span><strong>Username:</strong></span><input type="text" [(ngModel)]=" newUser.login" /> <br />
-  <span><strong>Password:</strong></span><input type="text" [(ngModel)]=" newUser.password" /> <br />
-  <span><strong>Email:</strong></span><input size="50" type="text" [(ngModel)]=" newUser.email" /> <br />
-  <button (click)="addUser()">Add</button>
-</div>
+<div class="container">
+  <h2># - Users List</h2>
+  <button class="doc-btn btn"> <i class="fas fa-book"></i> <a target="__blank"
+      href="https://sflorent.gitbook.io/template-angular-node/">Documentation</a></button>
 
-<div *ngIf="userDetails">
-  <h3>User N°{{ userDetails.id }} - {{ userDetails.login }}</h3>
-  <span><strong>Username:</strong></span><input type="text" [(ngModel)]=" userDetails.login" /> <br />
-  <span><strong>Password:</strong></span><input type="text" [(ngModel)]=" userDetails.password" /> <br />
-  <span><strong>Email:</strong></span><input size="50" type="text" [(ngModel)]=" userDetails.email" /> <br />
-  <span><strong>Created at:</strong> {{ userDetails.createdAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }} </span> <br />
-  <span><strong>Updated at:</strong> {{ userDetails.updatedAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }} </span> <br />
-  <button (click)="saveUser()">Save</button>
+  <div [appLoader]="isLoadingUsers" loaderHeight="150px" loaderWidth="150px">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>Email</th>
+          <th>Created at</th>
+          <th>Updated at</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.login }}</td>
+          <td>{{ user.password }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.createdAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}</td>
+          <td>{{ user.updatedAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}</td>
+          <td>
+            <button (click)="getDetails(user.id)">View details</button>
+            <button
+              [swal]="{ title: 'Delete the user ?', text: 'This action is irreversible.', icon: 'question', showCancelButton: true }"
+              (confirm)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="form-add">
+    <h2># - Add a user</h2>
+    <span>Username</span><input type="text" [(ngModel)]=" newUser.login" />
+    <span>Password</span><input type="text" [(ngModel)]=" newUser.password" />
+    <span>Email</span><input size="40" type="text" [(ngModel)]=" newUser.email" />
+    <button class="btn-form" (click)="addUser()"><i class="fas fa-plus"></i>Add</button>
+  </div>
+
+  <div class="form-detail">
+    <h2># - User details</h2>
+    <div class="column left-col">
+      <span>Username</span><input type="text" [(ngModel)]=" userDetails.login" />
+      <span>Password</span><input type="text" [(ngModel)]=" userDetails.password" />
+      <span>Email</span><input size="40" type="text" [(ngModel)]=" userDetails.email" />
+    </div>
+    <div class="column right-col">
+      <span>Created at</span><input type="text" value="{{ userDetails.createdAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}" disabled />
+      <span>Updated at</span><input type="text" value="{{ userDetails.updatedAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}" disabled />
+    </div>
+    <button class="btn-form" (click)="saveUser()" [ngClass]="{'disabled': !isUserDetailsLoaded}" ><i class="fas fa-save"></i>Save</button>
+  </div>
 </div>
 
 <!-- Success Modal -->

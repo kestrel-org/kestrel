@@ -1,4 +1,10 @@
-import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import {
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from "@angular/core";
 
 import { ExampleService } from "../../../../services/example.service";
 
@@ -42,7 +48,14 @@ export class UsersListComponent implements OnInit, OnDestroy {
   dtOptions: DataTables.Settings = {};
 
   users: User[];
-  userDetails: User;
+  userDetails: User = {
+    id: null,
+    login: null,
+    password: null,
+    email: null,
+    createdAt: null,
+    updatedAt: null,
+  };
   newUser: User = {
     id: undefined,
     login: "",
@@ -52,7 +65,7 @@ export class UsersListComponent implements OnInit, OnDestroy {
     updatedAt: undefined,
   };
 
-  isAddingUser = false;
+  isUserDetailsLoaded = false;
   isLoadingUsers = false;
 
   dtTrigger: Subject<any> = new Subject<any>();
@@ -62,7 +75,7 @@ export class UsersListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.dtOptions = {
       pagingType: "full_numbers",
-      responsive: true
+      responsive: true,
     };
 
     this.loadUsers();
@@ -106,6 +119,7 @@ export class UsersListComponent implements OnInit, OnDestroy {
   async getDetails(id) {
     const data = await this.exampleService.getUsersById(id);
     this.userDetails = data.user;
+    this.isUserDetailsLoaded = true;
     this.fireSuccessSwal(SUCCESS_SWAL_TYPE.view);
   }
 
@@ -117,15 +131,17 @@ export class UsersListComponent implements OnInit, OnDestroy {
   }
 
   async saveUser() {
-    await this.exampleService.putUsers(
-      this.userDetails.id,
-      this.userDetails.login,
-      this.userDetails.password,
-      this.userDetails.email
-    );
-    this.loadUsers();
-    this.clearUserDetails();
-    this.fireSuccessSwal(SUCCESS_SWAL_TYPE.edit);
+    if (this.isUserDetailsLoaded) {
+      await this.exampleService.putUsers(
+        this.userDetails.id,
+        this.userDetails.login,
+        this.userDetails.password,
+        this.userDetails.email
+      );
+      this.loadUsers();
+      this.clearUserDetails();
+      this.fireSuccessSwal(SUCCESS_SWAL_TYPE.edit);
+    }
   }
 
   fireSuccessSwal(type: SUCCESS_SWAL_TYPE) {
@@ -166,8 +182,15 @@ export class UsersListComponent implements OnInit, OnDestroy {
   }
 
   clearUserDetails() {
-    this.userDetails = undefined;
-    this.isAddingUser = false;
+    this.userDetails = {
+      id: null,
+      login: null,
+      password: null,
+      email: null,
+      createdAt: null,
+      updatedAt: null,
+    };
+    this.isUserDetailsLoaded = false;
   }
 
   checkNewUser(): boolean {
@@ -183,9 +206,5 @@ export class UsersListComponent implements OnInit, OnDestroy {
     }
 
     return ok;
-  }
-
-  toggleIsAddingUser() {
-    this.isAddingUser = !this.isAddingUser;
   }
 }

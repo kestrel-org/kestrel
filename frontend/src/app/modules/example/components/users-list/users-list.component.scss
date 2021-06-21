@@ -1,0 +1,145 @@
+// Import ROBOTO Font
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+
+.top-bar {
+  background-color: #7903fc;
+  color: white;
+  font-family: "Roboto";
+  padding: 20px 32px;
+  font-size: 30px;
+}
+
+.container {
+  padding: 25px 50px 50px 50px;
+  font-family: "Roboto";
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #024ce0;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #0a1af7;
+    transform: scale(1.1);
+  }
+
+  i {
+    margin-right: 10px;
+  }
+
+  &.doc-btn {
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  &.add-user-btn {
+    margin-left: 20px;
+  }
+}
+
+.btn-form {
+  width: 100%;
+  cursor: pointer;
+  background-color: #024ce0;
+  border: none;
+  padding: 14px 20px;
+  margin: 8px 0;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #0a1af7;
+  }
+
+  &.disabled {
+    background-color: #ccc;
+    cursor: default;
+  }
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+table {
+  &.dataTable.no-footer {
+    border-bottom: none;
+  }
+
+  td,
+  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #7903fc;
+    color: white;
+  }
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-add {
+  width: 20%;
+  display: inline-block;
+  padding: 10px 10px 10px 0px;
+}
+
+.form-detail {
+  width: 40%;
+  display: inline-block;
+  padding: 10px;
+}
+
+.column {
+  width: 49%;
+  display: inline-block;
+
+  &.left-col {
+    margin-right: 10px;
+  }
+
+  &.right-col {
+    position: relative;
+    top: -77px;
+  }
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  background-color: red;
+}
