@@ -8,6 +8,7 @@
 * Add checkAuthenticated config for the backend
 * English translation
 * Added gitbook for documentation
+* Angular v12
 
 ## v1.5.0 - Add Helmet config for the backend - `05/25/2021`
 
