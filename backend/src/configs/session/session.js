@@ -9,7 +9,7 @@ module.exports = (app) => {
         cookie: {
             maxAge: 86400000,
             httpOnly: false,
-            secure: false // true only for https
+            secure: 'auto' // true only for https
         }
     }));
 }
