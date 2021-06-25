@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.0.0 - Full Cli for the template and gitbook documentation - `NONE`
+## v2.0.0 - Full Cli for the template and gitbook documentation - `06/25/2021`
 
 * Added a full cli for the template
 * Log storage changed (now 1 file per day)
