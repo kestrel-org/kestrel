@@ -8,8 +8,8 @@
 
 <div class="container">
   <h2># - Users List</h2>
-  <button class="doc-btn btn"> <i class="fas fa-book"></i> <a target="__blank"
-      href="https://sflorent.gitbook.io/template-angular-node/">Documentation</a></button>
+  <a target="__blank" href="https://sflorent.gitbook.io/template-angular-node/"><button class="doc-btn btn"> <i
+        class="fas fa-book"></i> Documentation</button></a>
 
   <div [appLoader]="isLoadingUsers" loaderHeight="150px" loaderWidth="150px">
     <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
@@ -59,10 +59,13 @@
       <span>Email</span><input size="40" type="text" [(ngModel)]=" userDetails.email" />
     </div>
     <div class="column right-col">
-      <span>Created at</span><input type="text" value="{{ userDetails.createdAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}" disabled />
-      <span>Updated at</span><input type="text" value="{{ userDetails.updatedAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}" disabled />
+      <span>Created at</span><input type="text" value="{{ userDetails.createdAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}"
+        disabled />
+      <span>Updated at</span><input type="text" value="{{ userDetails.updatedAt | date:'dd/MM/yyyy HH:mm:ss':'fr' }}"
+        disabled />
     </div>
-    <button class="btn-form" (click)="saveUser()" [ngClass]="{'disabled': !isUserDetailsLoaded}" ><i class="fas fa-save"></i>Save</button>
+    <button class="btn-form" (click)="saveUser()" [ngClass]="{'disabled': !isUserDetailsLoaded}"><i
+        class="fas fa-save"></i>Save</button>
   </div>
 </div>
 
