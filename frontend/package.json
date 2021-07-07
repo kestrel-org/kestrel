@@ -39,7 +39,7 @@
     "@angular/compiler-cli": "^12.1.1",
     "@angular/language-service": "^12.1.1",
     "@compodoc/compodoc": "^1.1.11",
-    "@types/datatables.net": "^1.10.19",
+    "@types/datatables.net": "^1.10.20",
     "@types/jasmine": "^3.7.7",
     "@types/jasminewd2": "~2.0.9",
     "@types/jquery": "^3.5.5",
