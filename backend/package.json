@@ -44,7 +44,7 @@
     "http-errors": "^1.8.0",
     "morgan": "^1.10.0",
     "mysql2": "^2.2.5",
-    "pdfkit": "^0.12.1",
+    "pdfkit": "^0.12.3",
     "rotating-file-stream": "^2.1.5",
     "sequelize": "^6.6.5",
     "sequelize-auto": "^0.8.3"
