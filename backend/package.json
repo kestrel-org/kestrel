@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@babel/cli": "^7.15.4",
-    "@babel/core": "^7.15.4",
+    "@babel/core": "^7.15.5",
     "@babel/node": "^7.15.4",
     "@babel/preset-env": "^7.15.4",
     "compose-middleware": "^5.0.1",
