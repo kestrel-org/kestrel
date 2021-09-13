@@ -29,14 +29,14 @@
     "jquery": "^3.6.0",
     "rxjs": "^7.3.0",
     "sweetalert2": "^11.1.2",
-    "tslib": "^2.3.0",
+    "tslib": "^2.3.1",
     "uuid": "^8.3.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^12.1.4",
     "@angular/cli": "^12.1.4",
-    "@angular/compiler-cli": "^12.1.4",
+    "@angular/compiler-cli": "^12.2.5",
     "@angular/language-service": "^12.2.5",
     "@compodoc/compodoc": "^1.1.14",
     "@types/datatables.net": "^1.10.20",
