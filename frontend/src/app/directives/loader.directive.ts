@@ -33,7 +33,9 @@ export class LoaderDirective implements OnChanges {
     } else if (this.loaderActive) {
       this.el.nativeElement.style.display = this.baseDisplay;
       const img = document.getElementById('preloader_' + this.uuid);
-      img.remove();
+      if(img) {
+        img.remove();
+      }
     }
   }
 
