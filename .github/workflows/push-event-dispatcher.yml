@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: send event to other repo
         run: |
-          curl -X POST https://api.github.com/repos/template-angular-node/kli-cli/dispatches \
+          curl -X POST https://api.github.com/repos/ngx-template/kli-cli/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.ACCESS_TOKEN }} \
           --data '{"event_type": "Update angular-node template"}'
