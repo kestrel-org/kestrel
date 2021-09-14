@@ -1,5 +1,11 @@
 # Changelog
 
+
+## v2.1.0 - Mailer and dependencies update - `09/14/2021`
+
+* Added a mailer function in backend/utils
+* Dependencies update
+
 ## v2.0.0 - Full Cli for the template and gitbook documentation - `06/25/2021`
 
 * Added a full cli for the template
