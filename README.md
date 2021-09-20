@@ -2,7 +2,7 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/it-works-why.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)
 
-[![Depfu](https://badges.depfu.com/badges/a89d2322e30be2ad63350af5f0da8885/status.svg)](https://depfu.com) [![Depfu](https://badges.depfu.com/badges/a89d2322e30be2ad63350af5f0da8885/overview.svg)](https://depfu.com/github/template-angular-node/template-angular-node?project_id=26257)
+[![Depfu](https://badges.depfu.com/badges/7a5356abbabe8182c4af98d37d09f65c/status.svg)](https://depfu.com) [![Depfu](https://badges.depfu.com/badges/7a5356abbabe8182c4af98d37d09f65c/overview.svg)](https://depfu.com/github/ngx-template/ngx-template?project_id=26258)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
