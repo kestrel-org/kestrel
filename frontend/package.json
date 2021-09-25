@@ -25,7 +25,7 @@
     "@sweetalert2/ngx-sweetalert2": "^10.0.0",
     "angular-datatables": "^12.0.0",
     "datatables.net": "^1.11.3",
-    "datatables.net-dt": "^1.11.2",
+    "datatables.net-dt": "^1.11.3",
     "jquery": "^3.6.0",
     "rxjs": "^7.3.0",
     "sweetalert2": "^11.1.7",
