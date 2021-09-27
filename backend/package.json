@@ -46,7 +46,7 @@
     "mysql2": "^2.3.0",
     "nodemailer": "^6.6.5",
     "pdfkit": "^0.12.3",
-    "rotating-file-stream": "^2.1.5",
+    "rotating-file-stream": "^2.1.6",
     "sequelize": "^6.6.5",
     "sequelize-auto": "^0.8.4"
   },
