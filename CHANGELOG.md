@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.2.0 - dependencies update - `10/12/2021`
+
+* Dependencies update
 
 ## v2.1.0 - Mailer and dependencies update - `09/14/2021`
 

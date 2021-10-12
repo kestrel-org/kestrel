@@ -21,7 +21,6 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-              "apexcharts"
             ],
             "outputPath": "dist/frontend",
             "index": "src/index.html",
