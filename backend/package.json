@@ -48,7 +48,7 @@
     "pdfkit": "^0.12.3",
     "rotating-file-stream": "^2.1.6",
     "sequelize": "^6.7.0",
-    "sequelize-auto": "^0.8.4"
+    "sequelize-auto": "^0.8.5"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
