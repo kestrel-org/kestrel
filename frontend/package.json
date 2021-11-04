@@ -40,7 +40,7 @@
     "@angular/language-service": "^12.2.12",
     "@compodoc/compodoc": "^1.1.15",
     "@types/datatables.net": "^1.10.21",
-    "@types/jasmine": "^3.10.1",
+    "@types/jasmine": "^3.10.2",
     "@types/jquery": "^3.5.8",
     "@types/node": "^16.11.6",
     "jasmine-core": "~3.10.1",
