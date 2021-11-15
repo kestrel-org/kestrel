@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.3.0 - dependencies update - `11/15/2021`
+
+* Dependencies update
+
 ## v2.2.0 - dependencies update - `10/12/2021`
 
 * Dependencies update
