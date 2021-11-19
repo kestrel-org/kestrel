@@ -39,7 +39,7 @@
     "express-session": "^1.17.2",
     "express-swagger-generator": "^1.1.17",
     "faker": "^5.5.3",
-    "got": "^11.8.2",
+    "got": "^11.8.3",
     "helmet": "^4.6.0",
     "http-errors": "^1.8.1",
     "morgan": "^1.10.0",
