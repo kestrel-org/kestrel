@@ -33,7 +33,7 @@
     "@babel/preset-env": "^7.16.4",
     "compose-middleware": "^5.0.1",
     "cors": "^2.8.5",
-    "debug": "^4.3.2",
+    "debug": "^4.3.3",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
