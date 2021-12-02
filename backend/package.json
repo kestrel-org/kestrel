@@ -54,7 +54,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
-    "jest": "^27.4.2",
+    "jest": "^27.4.3",
     "regenerator-runtime": "^0.13.9",
     "sequelize-cli": "^6.3.0",
     "supertest": "^6.1.6"
