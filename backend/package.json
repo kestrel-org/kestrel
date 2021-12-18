@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "eslint": "^8.4.1",
+    "eslint": "^8.5.0",
     "eslint-plugin-import": "^2.25.3",
     "jest": "^27.4.5",
     "regenerator-runtime": "^0.13.9",
