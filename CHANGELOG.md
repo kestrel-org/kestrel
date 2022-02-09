@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.4.0 - dependencies update - `02/09/2022`
+
+* Replace "faker" with "community-faker"
+* Dependencies update
+
 ## v2.3.0 - dependencies update - `11/15/2021`
 
 * Dependencies update
