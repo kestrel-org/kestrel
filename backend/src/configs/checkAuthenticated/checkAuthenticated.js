@@ -1,7 +1,6 @@
-const routes = require('../../routes/routes');
-const config = require('./config.json')
-
 module.exports = async (req, res, next) => {
+    const config = require('./config.json');
+
     if (req.session.isAuthenticated) {
         next();
     } else {

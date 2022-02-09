@@ -1,7 +1,7 @@
-const cors = require('cors');
-const config = require('./config')
-
 module.exports = (app) => {
+    const cors = require('cors');
+    const config = require('./config');
+
     const corsOptions = {
         credentials: true,
         origin: function (origin, callback) {

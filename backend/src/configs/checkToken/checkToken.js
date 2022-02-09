@@ -1,8 +1,8 @@
-const fs = require('fs');
-const got = require('got');
-const config = require('./config.json')
-
 module.exports = async (req, res, next) => {
+    const fs = require('fs');
+    const got = await import('got');
+    const config = require('./config.json');
+
     if (req.method == 'OPTIONS') {
         next();
     } else {

@@ -1,6 +1,6 @@
 'use strict';
 
-const faker = require('faker');
+const faker = require('community-faker');
 
 const users = [...Array(100)].map((user) => (
   {
