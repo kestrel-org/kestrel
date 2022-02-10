@@ -8,5 +8,6 @@
 * Change Swagger Doc Library
 * Convert backend from "CommonJS" to "ESM"
 * Better use of BDD env
+* Docker implementation
 * ~~Option to specify height and width in the loader directive~~
 * ~~Cli creation for the template~~
