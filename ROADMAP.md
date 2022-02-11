@@ -9,5 +9,6 @@
 * Convert backend from "CommonJS" to "ESM"
 * Better use of BDD env
 * Docker implementation
+* Replace community-faker with faker-js/faker
 * ~~Option to specify height and width in the loader directive~~
 * ~~Cli creation for the template~~
