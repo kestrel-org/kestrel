@@ -47,7 +47,7 @@
     "nodemailer": "^6.7.2",
     "pdfkit": "^0.13.0",
     "rotating-file-stream": "^3.0.2",
-    "sequelize": "^6.15.1",
+    "sequelize": "^6.16.2",
     "sequelize-auto": "^0.8.8"
   },
   "devDependencies": {
