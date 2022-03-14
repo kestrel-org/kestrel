@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.5.0 - Backend improvements - `unreleased`
+
+* Replace "community-faker" with "faker-js/faker"
+
 ## v2.4.0 - dependencies update - `02/09/2022`
 
 * Replace "faker" with "community-faker"

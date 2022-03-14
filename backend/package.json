@@ -31,7 +31,7 @@
     "@babel/core": "^7.17.5",
     "@babel/node": "^7.16.8",
     "@babel/preset-env": "^7.16.11",
-    "community-faker": "^5.5.5",
+    "@faker-js/faker": "^6.0.0-beta.0",
     "compose-middleware": "^5.0.1",
     "cors": "^2.8.5",
     "debug": "^4.3.3",
