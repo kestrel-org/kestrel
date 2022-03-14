@@ -1,9 +1,33 @@
 /**
- * @typedef User
- * @property {integer} id.required - Id - eg: 1
- * @property {string} login.required - Login - eg: Ivy234
- * @property {string} password.required - Password - eg: zbtLMEv8
- * @property {string} email.required - Email - eg: Ivy234@hotmail.com
- * @property {string} createdAt.required - Creation date - eg: 2021-04-27T08:34:01.000Z
- * @property {string} updatedAt.required - Update date - eg: 2021-04-27T08:34:01.000Z
+ * @swagger
+ * components:
+ *  schemas:
+ *      User:
+ *          type: object
+ *          required:
+ *              - id
+ *              - login
+ *              - password
+ *              - email
+ *              - createdAt
+ *              - updatedAt
+ *          properties:
+ *              id:
+ *                  type: integer
+ *                  description: The auto-generated id of the user
+ *              login:
+ *                  type: string
+ *                  description: The login of the user
+ *              password:
+ *                  type: string
+ *                  description: The password of the user
+ *              email:
+ *                  type: string
+ *                  description: The email of the user
+ *              createdAt:
+ *                  type: string
+ *                  description: The creation date of the user
+ *              updatedAt:
+ *                  type: string
+ *                  description: The update date of the user
  */

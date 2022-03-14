@@ -1,8 +1,10 @@
 # Changelog
 
-## v2.5.0 - Backend improvements - `unreleased`
+## v2.5.0 - Replace old backend library - `unreleased`
 
 * Replace "community-faker" with "faker-js/faker"
+* Replace "express-swagger-generator" with "swagger-ui-express" and "swagger-jsdoc"
+* Update the kli-cli: routes template
 
 ## v2.4.0 - dependencies update - `02/09/2022`
 

@@ -4,12 +4,29 @@ const router = express.Router();
 const models = require('../models');
 
 /**
- * @route GET /example/users
- * @summary Return the users list
- * @group Example
- * @returns {Array.<User>} 200 - The users list
- * @returns {Error}  400 - Bad request
- * @returns {Error}  401 - Unauthorized
+ * @swagger
+ *  tags:
+ *    name: 'Example'
+ *    description: Examples routes
+ */
+
+/**
+ * @swagger
+ *  /example/users:
+ *    get:
+ *      description: Return the users list
+ *      tags: [Example]
+ *      responses:
+ *        200:
+ *          description: The users list
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/User'
+ *        400:
+ *          description: Bad request
+ *        401:
+ *          description: Unauthorized
  */
 router.get('/users', async function (req, res, next) {
   try {
@@ -25,13 +42,28 @@ router.get('/users', async function (req, res, next) {
 });
 
 /**
- * @route POST /example/users
- * @summary Create a user
- * @group Example
- * @param {User.model} user.body.required - the new user
- * @returns {User} 200 - The user created
- * @returns {Error}  400 - Bad request
- * @returns {Error}  401 - Unauthorized
+ * @swagger
+ *  /example/users:
+ *    post:
+ *      description: Create an user
+ *      tags: [Example]
+ *      requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/User'
+ *      responses:
+ *        200:
+ *          description: The created users
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/User'
+ *        400:
+ *          description: Bad request
+ *        401:
+ *          description: Unauthorized
  */
 router.post('/users', async function (req, res, next) {
   try {
@@ -47,13 +79,28 @@ router.post('/users', async function (req, res, next) {
 });
 
 /**
- * @route PUT /example/users
- * @summary Update a user
- * @group Example
- * @param {User.model} user.body.required - the updated user
- * @returns {User} 200 - The updated user
- * @returns {Error}  400 - Bad request
- * @returns {Error}  401 - Unauthorized
+ * @swagger
+ *  /example/users:
+ *    put:
+ *      description: Update an user
+ *      tags: [Example]
+ *      requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/User'
+ *      responses:
+ *        200:
+ *          description: The updated users 
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/User'
+ *        400:
+ *          description: Bad request
+ *        401:
+ *          description: Unauthorized
  */
 router.put('/users', async function (req, res, next) {
   try {
@@ -78,13 +125,25 @@ router.put('/users', async function (req, res, next) {
 });
 
 /**
- * @route DELETE /example/users
- * @summary Delete a user with the id in parameters
- * @group Example
- * @param {integer} id.query.required - the user id - eg: 1
- * @returns {object} 200 - OK
- * @returns {Error}  400 - Bad request
- * @returns {Error}  401 - Unauthorized
+ * @swagger
+ *  /example/users:
+ *    delete:
+ *      description: Delete an user
+ *      tags: [Example]
+ *      parameters:
+ *        - in: query
+ *          name: id
+ *          schema:
+ *            type: integer
+ *          required: true
+ *          description: The user id
+ *      responses:
+ *        200:
+ *          description: OK
+ *        400:
+ *          description: Bad request
+ *        401:
+ *          description: Unauthorized
  */
 router.delete('/users', async function (req, res, next) {
   try {
@@ -104,13 +163,29 @@ router.delete('/users', async function (req, res, next) {
 });
 
 /**
- * @route GET /example/users/{id}
- * @summary Return the user with the id in parameters
- * @group Example
- * @param {integer} id.path.required - the user id - eg: 1
- * @returns {User} 200 - The user
- * @returns {Error}  400 - Bad request
- * @returns {Error}  401 - Unauthorized
+ * @swagger
+ *  /example/users/{id}:
+ *    get:
+ *      description: Return the user with the id in parameters
+ *      tags: [Example]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *            type: integer
+ *          required: true
+ *          description: The user id
+ *      responses:
+ *        200:
+ *          description: The updated users 
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/User'
+ *        400:
+ *          description: Bad request
+ *        401:
+ *          description: Unauthorized
  */
 router.get('/users/:id', async function (req, res, next) {
   try {

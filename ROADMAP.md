@@ -5,7 +5,7 @@
 * ~~Translate code~~
 * ~~Translate changelog~~
 * Tests upgrade to merge automatically all PRs coming from depfu with mergify (only merges 'patch' PRs for now)
-* Change Swagger Doc Library
+* ~~Change Swagger Doc Library~~
 * Convert backend from "CommonJS" to "ESM"
 * Docker implementation
 * ~~Replace community-faker with faker-js/faker~~
