@@ -18,7 +18,7 @@
     "@angular/compiler": "^13.2.6",
     "@angular/core": "^13.2.6",
     "@angular/forms": "^13.2.6",
-    "@angular/localize": "^13.2.6",
+    "@angular/localize": "^13.3.0",
     "@angular/platform-browser": "^13.2.6",
     "@angular/platform-browser-dynamic": "^13.2.6",
     "@angular/router": "^13.2.6",
@@ -36,7 +36,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^13.2.6",
     "@angular/cli": "^13.3.0",
-    "@angular/compiler-cli": "^13.2.6",
+    "@angular/compiler-cli": "^13.3.0",
     "@angular/language-service": "^13.2.6",
     "@compodoc/compodoc": "^1.1.19",
     "@types/datatables.net": "^1.10.21",
