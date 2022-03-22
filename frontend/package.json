@@ -42,7 +42,7 @@
     "@types/datatables.net": "^1.10.21",
     "@types/jasmine": "^4.0.0",
     "@types/jquery": "^3.5.14",
-    "@types/node": "^17.0.21",
+    "@types/node": "^17.0.22",
     "jasmine-core": "~4.0.1",
     "karma": "^6.3.17",
     "karma-chrome-launcher": "~3.1.1",
