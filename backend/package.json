@@ -43,7 +43,7 @@
     "http-errors": "^2.0.0",
     "morgan": "^1.10.0",
     "mysql2": "^2.3.3",
-    "nodemailer": "^6.7.3",
+    "nodemailer": "^6.7.4",
     "pdfkit": "^0.13.0",
     "rotating-file-stream": "^3.0.3",
     "sequelize": "^6.19.0",
