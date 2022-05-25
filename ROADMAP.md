@@ -6,6 +6,7 @@
 * Convert backend from "CommonJS" to "ESM"
 * Docker implementation
 * Put backend in a new project to prepare the implemention of tsx-template
+* Add string interpolation everywhere needed
 
 ## Done
 
