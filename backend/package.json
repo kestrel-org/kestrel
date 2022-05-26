@@ -45,7 +45,7 @@
     "mysql2": "^2.3.3",
     "nodemailer": "^6.7.5",
     "pdfkit": "^0.13.0",
-    "rotating-file-stream": "^3.0.3",
+    "rotating-file-stream": "^3.0.4",
     "sequelize": "^6.20.0",
     "sequelize-auto": "^0.8.8",
     "swagger-jsdoc": "^6.2.1",
