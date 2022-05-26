@@ -20,22 +20,22 @@ export class ExampleService {
   };
 
   getUsers(): Promise<any> {
-    return lastValueFrom(this.http.get(this.BASEURL + "example/users", this.httpOptions));
+    return lastValueFrom(this.http.get(`${this.BASEURL}example/users`, this.httpOptions));
   }
 
   getUsersById(id: number): Promise<any> {
-    return lastValueFrom(this.http.get(this.BASEURL + "example/users/" + id, this.httpOptions));
+    return lastValueFrom(this.http.get(`${this.BASEURL}example/users/${id}`, this.httpOptions));
   }
 
   deleteUsersById(id: number): Promise<any> {
-    return lastValueFrom(this.http.delete(this.BASEURL + "example/users?id=" + id, this.httpOptions));
+    return lastValueFrom(this.http.delete(`${this.BASEURL}example/users?id=${id}`, this.httpOptions));
   }
 
   postUsers(login: string, password: string, email: string): Promise<any> {
-    return lastValueFrom(this.http.post(this.BASEURL + "example/users", {login, password, email}, this.httpOptions));
+    return lastValueFrom(this.http.post(`${this.BASEURL}example/users`, {login, password, email}, this.httpOptions));
   }
 
   putUsers(id: number, login: string, password: string, email: string): Promise<any> {
-    return lastValueFrom(this.http.put(this.BASEURL + "example/users", {id, login, password, email}, this.httpOptions));
+    return lastValueFrom(this.http.put(`${this.BASEURL}example/users`, {id, login, password, email}, this.httpOptions));
   }
 }
