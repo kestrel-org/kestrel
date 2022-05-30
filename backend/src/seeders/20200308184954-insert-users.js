@@ -1,8 +1,8 @@
 'use strict';
 
-const { faker } = require('@faker-js/faker');
+const {faker} = require('@faker-js/faker');
 
-const users = [...Array(100)].map((user) => (
+const users = Array(100).fill(0).map((user) => (
   {
     login: faker.internet.userName(),
     password: faker.internet.password(8),
@@ -10,7 +10,7 @@ const users = [...Array(100)].map((user) => (
   }
 ));
 
-module.exports = {
+module.exports =  {
   up: (queryInterface, Sequelize) => {
 
     /**

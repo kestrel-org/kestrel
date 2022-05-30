@@ -1,13 +1,12 @@
-#!/usr/bin/env node
-
 /**
  * Module dependencies.
  */
 
-const app = require('./app');
-const debug = require('debug');
-const http = require('http');
-const fs = require('fs');
+import 'dotenv/config';
+import app from './app';
+import debug from 'debug';
+import http from 'http';
+import fs from 'fs';
 
 /**
  * Get port from environment and store in Express.
@@ -94,3 +93,5 @@ function onListening() {
     'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+export default {}

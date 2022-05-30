@@ -39,7 +39,7 @@
     "@angular/compiler-cli": "^13.3.10",
     "@angular/language-service": "^13.3.10",
     "@compodoc/compodoc": "^1.1.19",
-    "@types/datatables.net": "^1.10.21",
+    "@types/datatables.net": "^1.10.22",
     "@types/jasmine": "^4.0.3",
     "@types/jquery": "^3.5.14",
     "@types/node": "^17.0.36",
@@ -48,7 +48,7 @@
     "karma-chrome-launcher": "~3.1.1",
     "karma-coverage": "^2.2.0",
     "karma-jasmine": "~5.0.1",
-    "karma-jasmine-html-reporter": "^1.7.0",
+    "karma-jasmine-html-reporter": "^2.0.0",
     "ts-node": "^10.8.0",
     "typescript": "4.6.4"
   }

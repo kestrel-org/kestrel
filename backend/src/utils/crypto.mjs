@@ -1,5 +1,4 @@
-require('dotenv').config();
-const crypto = require("crypto");
+import crypto from 'crypto';
 
 const algorithm = 'aes-256-ctr';
 const secretKey = process.env.SECRET_KEY;
@@ -17,7 +16,7 @@ const decrypt = (content) => {
     return decrypted.toString();
 };
 
-module.exports = {
+export default {
     encrypt,
     decrypt
 }

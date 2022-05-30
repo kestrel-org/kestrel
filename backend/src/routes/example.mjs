@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
+import models from '../models/index';
 const router = express.Router();
 
-const models = require('../models');
 
 /**
  * @swagger
@@ -201,4 +201,4 @@ router.get('/users/:id', async function (req, res, next) {
 });
 
 
-module.exports = router;
+export default router;

@@ -1,5 +1,5 @@
-module.exports = async (req, res, next) => {
-    const config = require('./config.json');
+import config from './config'
+export default async (req, res, next) => {
 
     if (req.session.isAuthenticated) {
         next();

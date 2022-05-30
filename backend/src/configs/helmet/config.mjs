@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     HELMET_OPTIONS: {
         contentSecurityPolicy: false
     }

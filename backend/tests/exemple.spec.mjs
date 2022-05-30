@@ -1,7 +1,6 @@
-require("regenerator-runtime/runtime");
-
-const request = require('supertest');
-const app = require('../src/app');
+import 'regenerator-runtime/runtime';
+import request from 'supertest';
+import app from '../src/app';
 
 let id;
 

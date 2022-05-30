@@ -1,5 +1,5 @@
-const PDFDocument = require('pdfkit');
-const fs = require('fs');
+import PDFDocument from 'pdfkit';
+import fs from 'fs';
 
 const tempFileName = 'output.pdf';
 
@@ -55,12 +55,13 @@ class PDFGenerator {
     }
 
     closeAndGetBytes() {
-        return new Promise((resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
             try {
                 this.doc.end();
-                setTimeout(() => {
-                    resolve(fs.readFileSync(tempFileName))
-                }, 250);
+                fs.readFile(tempFileName,(err, data) => {
+                    if (err) throw err;
+                    resolve(data);
+                })
             } catch (err) {
                 reject(err);
             }
@@ -68,4 +69,4 @@ class PDFGenerator {
     }
 }
 
-module.exports = PDFGenerator;
+export default PDFGenerator;

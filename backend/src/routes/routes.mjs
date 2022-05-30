@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     checkToken: false,
     checkAuthenticated: false,

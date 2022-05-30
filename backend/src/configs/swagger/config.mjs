@@ -1,4 +1,7 @@
-module.exports = {
+import * as url from 'url';
+import path from 'path';
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
+export default {
     swaggerDefinition: {
         openapi: '3.0.0', 
         components: {},

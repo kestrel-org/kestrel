@@ -1,6 +1,7 @@
-module.exports = (app) => {
-    const cors = require('cors');
-    const config = require('./config');
+import cors from 'cors'
+import config from './config.mjs';
+
+export default (app) => {
 
     const corsOptions = {
         credentials: true,

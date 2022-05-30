@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.6.0 - Convert backend from CommonJS to ESM - `05/30/2022`
+
+* Convert backend from CommonJS to ESM
+* Dependencies update
+
 ## v2.5.0 - Replace old backend library - `03/15/2022`
 
 * Replace "community-faker" with "faker-js/faker"

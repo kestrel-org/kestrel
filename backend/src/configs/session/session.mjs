@@ -1,7 +1,7 @@
-module.exports = (app) => {
-    const session = require('express-session');
-    const config = require('./config');
+import session from 'express-session';
+import config from './config'
 
+export default (app) => {
     app.use(session({
         secret: 'HvD56y!cgQnM',
         resave: false,

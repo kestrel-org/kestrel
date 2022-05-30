@@ -1,8 +1,11 @@
-module.exports = (app) => {
-    const path = require("path");
-    const rfs = require('rotating-file-stream');
-    const logger = require('morgan');
-    const config = require('./config');
+import path from 'path';
+import rfs from 'rotating-file-stream';
+import logger from 'morgan';
+import * as url from 'url';
+import config from './config';
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
+
+export default (app) => {
 
     // create a rotating write stream
     const accessLogStream = rfs.createStream('access.log', {

@@ -1,11 +1,12 @@
 /**
  * Module dependencies.
  */
-const express = require('express');
-const routes = require('./routes/routes');
-const path = require("path");
-const compose = require('compose-middleware').compose
-require('dotenv').config();
+
+import express from 'express';
+import routes from './routes/routes';
+import {compose} from 'compose-middleware';
+import asyncForEach from './utils/asyncForEach';
+import path from 'path';
 
 const app = express();
 
@@ -28,30 +29,38 @@ app.use(express.urlencoded({
   extended: false
 }));
 
-for (let extension in back_config) {
-    require(`./configs/${extension}/${extension}`)(app);
-}
+await asyncForEach(Object.entries(back_config),async ([extension,used])=>{
+  if(used){
+    const ext = await import(`./configs/${extension}/${extension}`)
+    const extModule = ext.default(app)
+    return extModule
+  }
+})
 
 const routesOptions = [];
-for (let middleware in middlewares) {
-    routesOptions[middleware] = require(`./configs/${middleware}/${middleware}`);
-}
+await asyncForEach(Object.entries(middlewares),async ([middleware,used])=>{
+  if(used){
+    const middlewareModule = await import(`./configs/${middleware}/${middleware}`)
+    return routesOptions[middleware]=middlewareModule.default()
+  }
+})
 
-for (let route of routes) {
+await asyncForEach(routes,async (route)=>{
   const middlewares = [];
   for(let routeOption in routesOptions){
     if(route[routeOption]){
       middlewares.push(routesOptions[routeOption]);
     }
   }
-  app.use(process.env.API_BASE_PATH + "/" + route.path, compose(middlewares), require(`./routes/${route.router}`));
-}
+  const router = await import(`./routes/${route.router}`);
+  app.use(process.env.API_BASE_PATH + "/" + route.path, compose(middlewares), router.default);
+})
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   res.status(404).send({
     code: 404,
-    error: 'route not found'
+    error: "Route not found"
   })
 });
 
@@ -65,4 +74,4 @@ app.use(function (err, req, res, next) {
   res.send(res.locals.message);
 });
 
-module.exports = app;
+export default app

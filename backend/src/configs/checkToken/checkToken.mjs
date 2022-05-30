@@ -1,7 +1,11 @@
-module.exports = async (req, res, next) => {
-    const fs = require('fs');
-    const got = await import('got');
-    const config = require('./config.json');
+import fs from 'fs';
+import got from 'got';
+import * as url from 'url';
+import path from 'path';
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
+import config from './config';
+
+export default async (req, res, next) => {
 
     if (req.method == 'OPTIONS') {
         next();

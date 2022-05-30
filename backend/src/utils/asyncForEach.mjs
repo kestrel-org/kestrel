@@ -4,4 +4,4 @@ const asyncForEach = async (array, callback) => {
     }
 }
 
-module.exports = asyncForEach;
+export default asyncForEach;
