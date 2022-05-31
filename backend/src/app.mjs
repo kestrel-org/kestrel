@@ -6,7 +6,6 @@ import express from 'express';
 import routes from './routes/routes';
 import {compose} from 'compose-middleware';
 import asyncForEach from './utils/asyncForEach';
-import path from 'path';
 
 const app = express();
 
