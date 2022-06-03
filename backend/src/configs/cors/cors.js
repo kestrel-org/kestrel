@@ -1,5 +1,5 @@
 import cors from 'cors'
-import config from './config.mjs';
+import config from './config';
 
 export default (app) => {
 

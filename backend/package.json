@@ -2,11 +2,11 @@
   "name": "backend",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "nodemon --exec node --es-module-specifier-resolution=node ./src/server.mjs --",
     "babel-node": "babel-node",
-    "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
-    "generate-models": "bash -c 'sequelize-auto -o \"./src/models\" -d $0 -h localhost -u $1 -p 3306 -x $2 -e mysql --skipTables sequelizemeta --noInitModels'"
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000"
   },
   "nodemonConfig": {
     "ignore": [
