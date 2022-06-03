@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "nodemon --exec node --es-module-specifier-resolution=node ./src/server.mjs --",
+    "start": "nodemon --exec node --es-module-specifier-resolution=node ./src/server.js --",
     "babel-node": "babel-node",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000"
   },
