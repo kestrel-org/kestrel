@@ -17,7 +17,7 @@ const sequelize = new Sequelize(conf.database, conf.username, conf.password, con
 fs
   .readdirSync(__dirname)
   .filter(file => {
-    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
+    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-4) === '.cjs');
   })
   .forEach(async (file) => {
     const modelModule = await import(url.pathToFileURL(path.join(__dirname, file)))
