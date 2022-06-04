@@ -14,7 +14,7 @@ const data = {
 describe('Get USERS', () => {
     it('should return users list', async () => {
         const res = await request(app)
-            .get('/api/exemple/users');
+            .get('/api/example/users');
         expect(res.statusCode).toEqual(200);
     })
 })
@@ -23,7 +23,7 @@ describe('Get USERS', () => {
 describe('Post USERS', () => {
     it('should create and return an user', async () => {
         const res = await request(app)
-            .post('/api/exemple/users')
+            .post('/api/example/users')
             .send(data);
         expect(res.statusCode).toEqual(200);
         expect(res.body.user.login).toEqual(data.login);
@@ -38,7 +38,7 @@ describe('Post USERS', () => {
 describe('Get USERS by Id', () => {
     it('should return an user', async () => {
         const res = await request(app)
-            .get('/api/exemple/users/' + id);
+            .get('/api/example/users/' + id);
         expect(res.statusCode).toEqual(200);
         expect(res.body.user.login).toEqual(data.login);
         expect(res.body.user.password).toEqual(data.password);
@@ -55,7 +55,7 @@ describe('Put USERS', () => {
         data2.id = id;
 
         const res = await request(app)
-            .put('/api/exemple/users')
+            .put('/api/example/users')
             .send(data);
 
         expect(res.statusCode).toEqual(200);
@@ -69,7 +69,7 @@ describe('Put USERS', () => {
 describe('Delete USERS by Id', () => {
     it('should delete an user', async () => {
         const res = await request(app)
-            .delete('/api/exemple/users?id=' + id);
+            .delete('/api/example/users?id=' + id);
         expect(res.statusCode).toEqual(200);
     })
 })
