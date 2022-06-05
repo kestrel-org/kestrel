@@ -145,11 +145,11 @@ router.put('/users', async function (req, res, next) {
  *        401:
  *          description: Unauthorized
  */
-router.delete('/users', async function (req, res, next) {
+router.delete('/users/:id', async function (req, res, next) {
   try {
     await models['users'].destroy({
       where: {
-        id: req.query.id
+        id: req.params.id
       }
     })
     res.status(200).send({

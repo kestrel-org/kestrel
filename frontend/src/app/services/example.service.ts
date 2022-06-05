@@ -28,7 +28,7 @@ export class ExampleService {
   }
 
   deleteUsersById(id: number): Promise<any> {
-    return lastValueFrom(this.http.delete(`${this.BASEURL}example/users?id=${id}`, this.httpOptions));
+    return lastValueFrom(this.http.delete(`${this.BASEURL}example/users/${id}`, this.httpOptions));
   }
 
   postUsers(login: string, password: string, email: string): Promise<any> {
