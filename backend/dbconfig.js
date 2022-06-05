@@ -1,3 +1,4 @@
+import 'dotenv/config';
 export default {
   "dev": {
     "username": process.env.DB_USERNAME_DEV,
