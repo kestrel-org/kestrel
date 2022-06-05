@@ -2,8 +2,6 @@ import 'regenerator-runtime/runtime';
 import request from 'supertest';
 import app from '../src/app';
 
-let id;
-
 const data = {
     "login": "TEST_USERNAME_UNIQUE",
     "password": "zbtLMEv8",
@@ -21,55 +19,44 @@ describe('Get USERS', () => {
 
 // POST
 describe('Post USERS', () => {
-    it('should create and return an user', async () => {
+    it('should create and return a user', async () => {
         const res = await request(app)
             .post('/api/example/users')
             .send(data);
         expect(res.statusCode).toEqual(200);
-        expect(res.body.user.login).toEqual(data.login);
-        expect(res.body.user.password).toEqual(data.password);
-        expect(res.body.user.email).toEqual(data.email);
-
-        id = res.body.user.id;
+        expect(res.body).toHaveProperty('user')
+        data.id = res.body.user.id;
     })
 })
 
 // GET
 describe('Get USERS by Id', () => {
-    it('should return an user', async () => {
+    it('should return a user', async () => {
         const res = await request(app)
-            .get('/api/example/users/' + id);
+            .get('/api/example/users/' + data.id);
         expect(res.statusCode).toEqual(200);
-        expect(res.body.user.login).toEqual(data.login);
-        expect(res.body.user.password).toEqual(data.password);
-        expect(res.body.user.email).toEqual(data.email);
+        expect(res.body).toHaveProperty('user')
     })
 })
 
 // PUT
 describe('Put USERS', () => {
-    it('should edit and return an user', async () => {
-
-        let data2 = data;
-        data2.login = "TEST_USERNAME_UNIQUE2";
-        data2.id = id;
+    it('should edit and return a user', async () => {
 
         const res = await request(app)
             .put('/api/example/users')
             .send(data);
 
         expect(res.statusCode).toEqual(200);
-        expect(res.body.user.login).toEqual(data2.login);
-        expect(res.body.user.password).toEqual(data2.password);
-        expect(res.body.user.email).toEqual(data2.email);
+        expect(res.body).toHaveProperty('user')
     })
 })
 
 // DELETE
 describe('Delete USERS by Id', () => {
-    it('should delete an user', async () => {
+    it('should delete a user', async () => {
         const res = await request(app)
-            .delete('/api/example/users?id=' + id);
+            .delete('/api/example/users/' + data.id);
         expect(res.statusCode).toEqual(200);
     })
 })
