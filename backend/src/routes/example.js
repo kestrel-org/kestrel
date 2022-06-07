@@ -55,7 +55,7 @@ router.get('/users', async function (req, res, next) {
  *              $ref: '#/components/schemas/User'
  *      responses:
  *        200:
- *          description: The created users
+ *          description: The created user
  *          content:
  *            application/json:
  *              schema:
@@ -92,7 +92,7 @@ router.post('/users', async function (req, res, next) {
  *              $ref: '#/components/schemas/User'
  *      responses:
  *        200:
- *          description: The updated users 
+ *          description: The updated user 
  *          content:
  *            application/json:
  *              schema:
@@ -126,12 +126,12 @@ router.put('/users', async function (req, res, next) {
 
 /**
  * @swagger
- *  /example/users:
+ *  /example/users/{id}:
  *    delete:
  *      description: Delete an user
  *      tags: [Example]
  *      parameters:
- *        - in: query
+ *        - in: path
  *          name: id
  *          schema:
  *            type: integer
@@ -177,7 +177,7 @@ router.delete('/users/:id', async function (req, res, next) {
  *          description: The user id
  *      responses:
  *        200:
- *          description: The updated users 
+ *          description: The user
  *          content:
  *            application/json:
  *              schema:
