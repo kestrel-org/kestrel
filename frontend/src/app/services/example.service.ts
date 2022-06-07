@@ -1,20 +1,18 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { environment } from "../../environments/environment";
-import { lastValueFrom } from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+import { lastValueFrom } from 'rxjs';
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class ExampleService {
-
   BASEURL: string = environment.API_URL;
 
   constructor(private http: HttpClient) {}
 
   httpOptions = {
     headers: new HttpHeaders({
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": environment.ORIGIN_URL,
+      'Content-Type': 'application/json',
     }),
     withCredentials: true,
   };
@@ -32,10 +30,10 @@ export class ExampleService {
   }
 
   postUsers(login: string, password: string, email: string): Promise<any> {
-    return lastValueFrom(this.http.post(`${this.BASEURL}example/users`, {login, password, email}, this.httpOptions));
+    return lastValueFrom(this.http.post(`${this.BASEURL}example/users`, { login, password, email }, this.httpOptions));
   }
 
   putUsers(id: number, login: string, password: string, email: string): Promise<any> {
-    return lastValueFrom(this.http.put(`${this.BASEURL}example/users`, {id, login, password, email}, this.httpOptions));
+    return lastValueFrom(this.http.put(`${this.BASEURL}example/users`, { id, login, password, email }, this.httpOptions));
   }
 }

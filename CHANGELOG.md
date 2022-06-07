@@ -5,6 +5,7 @@
 - Angular 14
 - Fix delete route in swagger docs
 - Change example angular structure
+- Remove Access-Control-Allow-Origin from the service
 - Dependencies update
 
 ## v2.6.0 - Convert backend from CommonJS to ESM - `05/30/2022`
