@@ -58,6 +58,6 @@
     "jest": "^28.1.2",
     "regenerator-runtime": "^0.13.9",
     "sequelize-cli": "^6.4.1",
-    "supertest": "^6.2.3"
+    "supertest": "^6.2.4"
   }
 }
