@@ -1,4 +1,4 @@
-# NGX-TEMPLATE
+# KESTREL
 
 ## Template for Angular v14 - Node / Express / Sequelize 
 
