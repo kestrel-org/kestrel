@@ -29,7 +29,7 @@ Several utilities are built in the template :
 
 ## Documentation
 
-[Documentation](https://sflorent.gitbook.io/ngx-template/)
+[Documentation](https://sflorent.gitbook.io/kestrel/)
 
 ## Author(s)
 
