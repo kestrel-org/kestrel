@@ -39,7 +39,7 @@
     "@angular/compiler-cli": "^14.0.6",
     "@angular/language-service": "^14.0.6",
     "@compodoc/compodoc": "^1.1.19",
-    "@types/datatables.net": "^1.10.22",
+    "@types/datatables.net": "^1.10.23",
     "@types/jasmine": "^4.0.3",
     "@types/jquery": "^3.5.14",
     "@types/node": "^18.0.6",
