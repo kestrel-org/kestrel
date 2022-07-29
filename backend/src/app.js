@@ -4,7 +4,7 @@
 
 import express from 'express';
 import routes from './routes/routes';
-import {compose} from 'compose-middleware';
+import { compose } from 'compose-middleware';
 import asyncForEach from './utils/asyncForEach';
 
 const app = express();
@@ -16,51 +16,53 @@ const back_config = {
   session: true,
   cors: true,
   logger: true,
-}
+};
 
 const middlewares = {
   checkToken: false,
-  checkAuthenticated: false
-}
+  checkAuthenticated: false,
+};
 
 app.use(express.json());
-app.use(express.urlencoded({
-  extended: false
-}));
+app.use(
+  express.urlencoded({
+    extended: false,
+  })
+);
 
-await asyncForEach(Object.entries(back_config),async ([extension,used])=>{
-  if(used){
-    const ext = await import(`./configs/${extension}/${extension}`)
-    const extModule = ext.default(app)
-    return extModule
+await asyncForEach(Object.entries(back_config), async ([extension, used]) => {
+  if (used) {
+    const ext = await import(`./configs/${extension}/${extension}`);
+    const extModule = ext.default(app);
+    return extModule;
   }
-})
+});
 
-const routesOptions = [];
-await asyncForEach(Object.entries(middlewares),async ([middleware,used])=>{
-  if(used){
-    const middlewareModule = await import(`./configs/${middleware}/${middleware}`)
-    return routesOptions[middleware]=middlewareModule.default()
+const routesOptions = {};
+await asyncForEach(Object.entries(middlewares), async ([middleware, used]) => {
+  if (used) {
+    const { default: middlewareModule } = await import(`./configs/${middleware}/${middleware}`);
+    return (routesOptions[middleware] = middlewareModule);
   }
-})
+});
 
-await asyncForEach(routes,async (route)=>{
+await asyncForEach(routes, async (route) => {
   const middlewares = [];
-  for(let routeOption in routesOptions){
-    if(route[routeOption]){
+  for (let routeOption in routesOptions) {
+    if (route[routeOption]) {
       middlewares.push(routesOptions[routeOption]);
     }
   }
-  const router = await import(`./routes/${route.router}`);
-  app.use(process.env.API_BASE_PATH + "/" + route.path, compose(middlewares), router.default);
-})
+  const { default: router } = await import(`./routes/${route.router}`);
+  app.use(process.env.API_BASE_PATH + '/' + route.path, middlewares, router);
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   res.status(404).send({
     code: 404,
-    error: "Route not found"
-  })
+    error: 'Route not found',
+  });
 });
 
 // error handler
@@ -73,4 +75,4 @@ app.use(function (err, req, res, next) {
   res.send(res.locals.message);
 });
 
-export default app
+export default app;

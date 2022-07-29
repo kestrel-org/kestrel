@@ -2,7 +2,6 @@ import express from 'express';
 import models from '../models/index';
 const router = express.Router();
 
-
 /**
  * @swagger
  *  tags:
@@ -32,11 +31,11 @@ router.get('/users', async function (req, res, next) {
   try {
     const users = await models['users'].findAll();
     res.status(200).send({
-      users
+      users,
     });
   } catch (err) {
     res.status(400).send({
-      error: err.parent ? err.parent.sqlMessage : err.errors
+      error: err.parent ? err.parent.sqlMessage : err.errors,
     });
   }
 });
@@ -69,11 +68,11 @@ router.post('/users', async function (req, res, next) {
   try {
     const user = await models['users'].create(req.body);
     res.status(200).send({
-      user
+      user,
     });
   } catch (err) {
     res.status(400).send({
-      error: err.parent ? err.parent.sqlMessage : err.errors
+      error: err.parent ? err.parent.sqlMessage : err.errors,
     });
   }
 });
@@ -92,7 +91,7 @@ router.post('/users', async function (req, res, next) {
  *              $ref: '#/components/schemas/User'
  *      responses:
  *        200:
- *          description: The updated user 
+ *          description: The updated user
  *          content:
  *            application/json:
  *              schema:
@@ -108,18 +107,18 @@ router.put('/users', async function (req, res, next) {
     const { id: idUser, ...userData } = req.body;
     if (!idUser) {
       res.status(400).send({
-        error: "Veuillez renseigner un id"
+        error: 'Veuillez renseigner un id',
       });
     } else {
       await models['users'].update(userData, { where: { id: idUser } });
       const user = await models['users'].findByPk(idUser);
       res.status(200).send({
-        user
+        user,
       });
     }
   } catch (err) {
     res.status(400).send({
-      error: err.parent ? err.parent.sqlMessage : err.errors
+      error: err.parent ? err.parent.sqlMessage : err.errors,
     });
   }
 });
@@ -149,15 +148,15 @@ router.delete('/users/:id', async function (req, res, next) {
   try {
     await models['users'].destroy({
       where: {
-        id: req.params.id
-      }
-    })
+        id: req.params.id,
+      },
+    });
     res.status(200).send({
-      msg: 'ok'
+      msg: 'ok',
     });
   } catch (err) {
     res.status(400).send({
-      error: err.parent ? err.parent.sqlMessage : err.errors
+      error: err.parent ? err.parent.sqlMessage : err.errors,
     });
   }
 });
@@ -191,14 +190,13 @@ router.get('/users/:id', async function (req, res, next) {
   try {
     const user = await models['users'].findByPk(req.params.id);
     res.status(200).send({
-      user
+      user,
     });
   } catch (err) {
     res.status(400).send({
-      error: err.parent ? err.parent.sqlMessage : err.errors
+      error: err.parent ? err.parent.sqlMessage : err.errors,
     });
   }
 });
-
 
 export default router;
