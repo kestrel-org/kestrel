@@ -48,7 +48,7 @@
     "rotating-file-stream": "^3.0.4",
     "sequelize": "^6.21.3",
     "sequelize-auto": "^0.8.8",
-    "swagger-jsdoc": "^6.2.3",
+    "swagger-jsdoc": "^6.2.4",
     "swagger-ui-express": "^4.5.0"
   },
   "devDependencies": {
