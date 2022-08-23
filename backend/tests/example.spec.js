@@ -13,6 +13,7 @@ describe('Get USERS', () => {
     it('should return users list', async () => {
         const res = await request(app)
             .get('/api/example/users');
+        expect(res.error.text).toBeUndefined();
         expect(res.statusCode).toEqual(200);
     })
 })
@@ -23,6 +24,7 @@ describe('Post USERS', () => {
         const res = await request(app)
             .post('/api/example/users')
             .send(data);
+        expect(res.error.text).toBeUndefined();
         expect(res.statusCode).toEqual(200);
         expect(res.body).toHaveProperty('user')
         data.id = res.body.user.id;
@@ -34,6 +36,7 @@ describe('Get USERS by Id', () => {
     it('should return a user', async () => {
         const res = await request(app)
             .get('/api/example/users/' + data.id);
+        expect(res.error.text).toBeUndefined();
         expect(res.statusCode).toEqual(200);
         expect(res.body).toHaveProperty('user')
     })
@@ -46,7 +49,7 @@ describe('Put USERS', () => {
         const res = await request(app)
             .put('/api/example/users')
             .send(data);
-
+        expect(res.error.text).toBeUndefined();
         expect(res.statusCode).toEqual(200);
         expect(res.body).toHaveProperty('user')
     })
@@ -57,6 +60,7 @@ describe('Delete USERS by Id', () => {
     it('should delete a user', async () => {
         const res = await request(app)
             .delete('/api/example/users/' + data.id);
+        expect(res.error.text).toBeUndefined();
         expect(res.statusCode).toEqual(200);
     })
 })
