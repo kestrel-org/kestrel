@@ -8,7 +8,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-https://sflorent.gitbook.io/kestrel/
+https://kestrel-org.github.io/
 
 ## Introduction 
 
@@ -29,7 +29,7 @@ Several utilities are built in the template :
 
 ## Documentation
 
-[Documentation](https://sflorent.gitbook.io/kestrel/)
+[Documentation](https://kestrel-org.github.io/)
 
 ## Author(s)
 
