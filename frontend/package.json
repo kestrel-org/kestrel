@@ -36,7 +36,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.6",
     "@angular/cli": "^14.2.6",
-    "@angular/compiler-cli": "^14.2.5",
+    "@angular/compiler-cli": "^14.2.6",
     "@angular/language-service": "^14.2.5",
     "@compodoc/compodoc": "^1.1.19",
     "@types/datatables.net": "^1.10.24",
