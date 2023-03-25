@@ -46,7 +46,7 @@
     "nodemailer": "^6.8.0",
     "pdfkit": "^0.13.0",
     "rotating-file-stream": "^3.0.4",
-    "sequelize": "^6.25.4",
+    "sequelize": "^6.30.0",
     "sequelize-auto": "^0.8.8",
     "swagger-jsdoc": "^6.2.5",
     "swagger-ui-express": "^4.5.0"
