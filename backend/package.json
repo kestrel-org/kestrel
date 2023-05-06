@@ -49,7 +49,7 @@
     "sequelize": "^6.25.4",
     "sequelize-auto": "^0.8.8",
     "swagger-jsdoc": "^6.2.5",
-    "swagger-ui-express": "^4.5.0"
+    "swagger-ui-express": "^4.6.3"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
