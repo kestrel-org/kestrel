@@ -28,9 +28,9 @@
   },
   "dependencies": {
     "@babel/cli": "^7.19.3",
-    "@babel/core": "^7.19.6",
+    "@babel/core": "^7.22.20",
     "@babel/node": "^7.19.1",
-    "@babel/preset-env": "^7.19.3",
+    "@babel/preset-env": "^7.22.20",
     "@faker-js/faker": "^7.6.0",
     "compose-middleware": "^5.0.1",
     "cors": "^2.8.5",
